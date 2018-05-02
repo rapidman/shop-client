@@ -1,6 +1,6 @@
 <div fxLayout="column" fxFill>
   <div fxLayout fxFlex>
-    <div fxFlex="100" fxLayoutAlign="center center">
+    <div fxFlex="100" fxLayoutAlign="center center" class="top-menu">
           <button mat-button [routerLink]="['/car-add']">Главная</button>
           <button mat-button [routerLink]="['/car-add']">Новости</button>
           <button mat-button [routerLink]="['/car-add']">Напишите нам</button>
@@ -19,7 +19,7 @@
   </div>
   <div fxLayout="column" fxFill>
     <div fxLayout fxFlex>
-      <div class="one" fxFlex="20" fxLayoutAlign="center center">
+      <div class="left-col" fxFlex="20" fxLayoutAlign="center center">
         <mat-accordion multi="true">
           <mat-expansion-panel [expanded]="true" class="expansion-panel">
             <mat-expansion-panel-header class="expansion-panel-header">
@@ -52,7 +52,7 @@
           </mat-expansion-panel>
         </mat-accordion>
       </div>
-      <div class="two" fxFlex="80" fxLayoutAlign="left top">
+      <div fxFlex="80" fxLayoutAlign="left top">
         <router-outlet></router-outlet>
       </div>
     </div>

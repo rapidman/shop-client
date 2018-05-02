@@ -6,3 +6,11 @@
 .expansion-panel-header{
   height: 28px;
 }
+
+.left-col {
+  min-width: 400px;
+}
+
+.top-menu {
+  min-width: 500px;
+}
