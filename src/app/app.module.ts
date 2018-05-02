@@ -16,10 +16,15 @@ import {GiphyService} from "./shared/giphy/giphy.service";
 import { CarEditComponent } from './car-edit/car-edit.component';
 import {RouterModule, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import { MainComponent } from './main/main.component';
 
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/car-list', pathMatch: 'full' },
+  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  {
+    path: 'main',
+    component: MainComponent
+  },
   {
     path: 'car-list',
     component: CarListComponent
@@ -39,7 +44,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CarListComponent,
-    CarEditComponent
+    CarEditComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
