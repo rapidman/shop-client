@@ -16,7 +16,8 @@
   </div>
 
   <div fxLayout fxFlex fxLayoutGap="10px">
-    <div class="left-col" fxFlex="20" fxLayoutAlign="start" dir="rtl">
+    <div fxFlex="2" fxLayoutAlign="start"></div>
+    <div class="left-col" fxFlex="20" fxLayoutAlign="start" >
       <mat-accordion multi="true">
         <mat-expansion-panel [expanded]="true" class="expansion-panel">
           <mat-expansion-panel-header class="expansion-panel-header">
@@ -49,8 +50,9 @@
         </mat-expansion-panel>
       </mat-accordion>
     </div>
-    <div fxFlex="60" fxLayoutAlign="start" dir="ltr" class="right-col">
+    <div fxFlex="76" fxLayoutAlign="start" dir="auto" class="right-col">
       <router-outlet></router-outlet>
     </div>
+    <div fxFlex="2" fxLayoutAlign="start"></div>
   </div>
 </div>
