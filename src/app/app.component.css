@@ -8,9 +8,23 @@
 }
 
 .left-col {
-  min-width: 400px;
+  min-width: 200px;
+  background-color: cornsilk;
 }
 
 .top-menu {
   min-width: 500px;
+  background-color: azure;
+}
+
+.logo-panel {
+  background-color: aliceblue;
+}
+
+.search-panel {
+  background-color: beige;
+}
+
+.right-col {
+  background-color: azure;
 }

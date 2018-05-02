@@ -1,60 +1,56 @@
-<div fxLayout="column" fxFill>
-  <div fxLayout fxFlex>
-    <div fxFlex="100" fxLayoutAlign="center center" class="top-menu">
-          <button mat-button [routerLink]="['/car-add']">Главная</button>
-          <button mat-button [routerLink]="['/car-add']">Новости</button>
-          <button mat-button [routerLink]="['/car-add']">Напишите нам</button>
-          <button mat-button [routerLink]="['/car-add']">О компании</button>
-    </div>
+<div fxLayout="column" fxFill fxFlex="100">
+
+  <div fxLayoutAlign="center center" class="top-menu">
+    <button mat-button [routerLink]="['/car-add']">Главная</button>
+    <button mat-button [routerLink]="['/car-add']">Новости</button>
+    <button mat-button [routerLink]="['/car-add']">Напишите нам</button>
+    <button mat-button [routerLink]="['/car-add']">О компании</button>
   </div>
-  <div fxLayout fxFlex>
-    <div fxFlex="100" fxLayoutAlign="center center">
-      Logo
-    </div>
+
+  <div fxLayoutAlign="center center" class="logo-panel">
+    Logo
   </div>
-  <div fxLayout fxFlex>
-    <div fxFlex="100" fxLayoutAlign="center center">
-      Search
-    </div>
+
+  <div fxLayoutAlign="center center" class="search-panel">
+    Search
   </div>
-  <div fxLayout="column" fxFill>
-    <div fxLayout fxFlex>
-      <div class="left-col" fxFlex="20" fxLayoutAlign="center center">
-        <mat-accordion multi="true">
-          <mat-expansion-panel [expanded]="true" class="expansion-panel">
-            <mat-expansion-panel-header class="expansion-panel-header">
-              <mat-panel-title>
-                Спальное белье
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <mat-action-row>
-              Комплекты постельного белья
-            </mat-action-row>
-            <mat-action-row>
-              Матрацы ватные
-            </mat-action-row>
-            <mat-action-row>
-              Подушки
-            </mat-action-row>
-          </mat-expansion-panel>
-          <mat-expansion-panel [expanded]="true" class="expansion-panel">
-            <mat-expansion-panel-header class="expansion-panel-header">
-              <mat-panel-title>
-                Кухонные принадлежности
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <mat-action-row>
-              Полотенца
-            </mat-action-row>
-            <mat-action-row>
-              Посуда
-            </mat-action-row>
-          </mat-expansion-panel>
-        </mat-accordion>
-      </div>
-      <div fxFlex="80" fxLayoutAlign="left top">
-        <router-outlet></router-outlet>
-      </div>
+
+  <div fxLayout fxFlex fxLayoutGap="10px">
+    <div class="left-col" fxFlex="20" fxLayoutAlign="start" dir="rtl">
+      <mat-accordion multi="true">
+        <mat-expansion-panel [expanded]="true" class="expansion-panel">
+          <mat-expansion-panel-header class="expansion-panel-header">
+            <mat-panel-title>
+              Спальное белье
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-action-row>
+            Комплекты постельного белья
+          </mat-action-row>
+          <mat-action-row>
+            Матрацы ватные
+          </mat-action-row>
+          <mat-action-row>
+            Подушки
+          </mat-action-row>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true" class="expansion-panel">
+          <mat-expansion-panel-header class="expansion-panel-header">
+            <mat-panel-title>
+              Кухонные принадлежности
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-action-row>
+            Полотенца
+          </mat-action-row>
+          <mat-action-row>
+            Посуда
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div fxFlex="60" fxLayoutAlign="start" dir="ltr" class="right-col">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
