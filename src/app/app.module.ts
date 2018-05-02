@@ -6,7 +6,11 @@ import { AppComponent } from './app.component';
 import {CarService} from "./shared/car/car.service";
 import {HttpClientModule} from "@angular/common/http";
 import { CarListComponent } from './car-list/car-list.component';
-import {MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule} from "@angular/material";
+import {
+  MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule,
+  MatSidenavModule,
+  MatToolbarModule
+} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {GiphyService} from "./shared/giphy/giphy.service";
 import { CarEditComponent } from './car-edit/car-edit.component';
@@ -46,6 +50,10 @@ const appRoutes: Routes = [
     MatInputModule,
     MatListModule,
     MatToolbarModule,
+    MatMenuModule,
+    MatIconModule,
+    MatExpansionModule,
+    MatSidenavModule,
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],

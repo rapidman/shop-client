@@ -30,3 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Setup
  - https://angular-ui.github.io/
  - https://github.com/angular/angular-cli
+ - http://adaptive-shoes-shop.oml.ru/
