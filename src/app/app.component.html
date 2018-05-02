@@ -1,9 +1,13 @@
-<button mat-button [routerLink]="['/car-add']">Главная</button>
-<mat-toolbar color="primary">
-  <span>Welcome to {{title}}!</span>
+<mat-toolbar>
+  <mat-toolbar-row class="top-menu">
+    <button mat-button [routerLink]="['/car-add']">Главная</button>
+    <button mat-button [routerLink]="['/car-add']">Новости</button>
+    <button mat-button [routerLink]="['/car-add']">Напишите нам</button>
+    <button mat-button [routerLink]="['/car-add']">О компании</button>
+  </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-sidenav-container class="example-container">
+<mat-sidenav-container class="sidenav-container">
   <mat-sidenav opened mode="side">
     <mat-accordion>
       <mat-expansion-panel>
