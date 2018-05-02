@@ -8,15 +8,31 @@
 }
 
 .top-menu{
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background-color: antiquewhite;
+  /*align-items: center;*/
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*background-color: antiquewhite;*/
 }
 
 .search-panel{
+  /*align-items: center;*/
+  /*display: flex;*/
+  /*justify-content: center;*/
+  background-color: aquamarine;
+}
+
+.logo-panel{
   align-items: center;
   display: flex;
   justify-content: center;
-  background-color: aquamarine;
+  background-color: azure;
+}
+
+.expansion-panel{
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.expansion-panel-header{
+  height: 28px;
 }

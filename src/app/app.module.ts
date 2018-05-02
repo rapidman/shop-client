@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+import {FlexLayoutModule} from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import {CarService} from "./shared/car/car.service";
 import {HttpClientModule} from "@angular/common/http";
@@ -48,6 +48,7 @@ const appRoutes: Routes = [
     MainComponent
   ],
   imports: [
+    FlexLayoutModule,
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
