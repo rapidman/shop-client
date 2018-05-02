@@ -1,13 +1,22 @@
 .sidenav-container {
   position: absolute;
-  top: 60px;
+  top: 200px;
   bottom: 0;
   left: 0;
   right: 0;
+  background-color: ivory;
 }
 
 .top-menu{
   align-items: center;
   display: flex;
   justify-content: center;
+  background-color: antiquewhite;
+}
+
+.search-panel{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: aquamarine;
 }
