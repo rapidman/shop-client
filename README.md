@@ -32,3 +32,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
  - https://github.com/angular/angular-cli
  - http://adaptive-shoes-shop.oml.ru/
  - https://github.com/angular/flex-layout/wiki/fxFlex-API
+ - https://github.com/angular/flex-layout/wiki/API-Documentation#containers

@@ -1,3 +1,29 @@
-<p>
-  main works! fdthhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh rt hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; kkk
-</p>
+<div class="container"  fxShow="true" fxHide.lt-md="true" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+  <div fxFlex="20%">
+    <mat-accordion multi="false">
+      <mat-expansion-panel [expanded]="true" class="expansion-panel">
+        <mat-expansion-panel-header class="expansion-panel-header">
+          <mat-panel-title>
+            Каталог товаров
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-action-row>
+          Комплекты постельного белья
+        </mat-action-row>
+        <mat-action-row>
+          Матрацы ватные
+        </mat-action-row>
+        <mat-action-row>
+          Подушки
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div fxFlex="80%">
+    Main content
+  </div>
+</div>
+
+<div fxShow="true" fxHide.gt-sm="true">
+  Main content
+</div>
