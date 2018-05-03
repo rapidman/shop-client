@@ -1,23 +1,25 @@
 <div fxLayout="column" fxFill fxFlex="100">
 
-  <div fxLayoutAlign="center center" class="top-menu">
-    <button mat-button [routerLink]="['/car-add']">Главная</button>
-    <button mat-button [routerLink]="['/car-add']">Новости</button>
-    <button mat-button [routerLink]="['/car-add']">Напишите нам</button>
-    <button mat-button [routerLink]="['/car-add']">О компании</button>
+  <div fxLayoutAlign="center center" class="top-menu" fxShow="true" fxHide.lt-md="true">
+      <button mat-button [routerLink]="['/car-add']">Главная</button>
+      <button mat-button [routerLink]="['/car-add']">Новости</button>
+      <button mat-button [routerLink]="['/car-add']">Напишите нам</button>
+      <button mat-button [routerLink]="['/car-add']">О компании</button>
+  </div>
+  <div fxShow="true" fxHide.gt-sm="true" class="top-menu" dir="rtl">
+    <a href="#">Show Side Menu</a>
   </div>
 
-  <div fxLayoutAlign="center center" class="logo-panel">
+  <div fxLayoutAlign="center center" class="logo-panel" fxShow="true" fxHide.lt-md="true">
     Logo
   </div>
 
-  <div fxLayoutAlign="center center" class="search-panel">
+  <div fxLayoutAlign="center center" class="search-panel" fxShow="true" fxHide.lt-md="true">
     Search
   </div>
 
   <div fxLayout fxFlex fxLayoutGap="10px">
-    <div fxFlex="2" fxLayoutAlign="start"></div>
-    <div class="left-col" fxFlex="20" fxLayoutAlign="start" >
+    <div class="left-col" fxFlex="20" fxLayoutAlign="start">
       <mat-accordion multi="true">
         <mat-expansion-panel [expanded]="true" class="expansion-panel">
           <mat-expansion-panel-header class="expansion-panel-header">
@@ -50,9 +52,8 @@
         </mat-expansion-panel>
       </mat-accordion>
     </div>
-    <div fxFlex="76" fxLayoutAlign="start" dir="auto" class="right-col">
+    <div fxFlex="80" fxLayoutAlign="start" dir="auto" class="right-col">
       <router-outlet></router-outlet>
     </div>
-    <div fxFlex="2" fxLayoutAlign="start"></div>
   </div>
 </div>
