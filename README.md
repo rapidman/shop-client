@@ -34,3 +34,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
  - https://github.com/angular/flex-layout/wiki/fxFlex-API
  - https://github.com/angular/flex-layout/wiki/API-Documentation#containers
  - https://docs.angularjs.org/tutorial/step_14
+ - https://alligator.io/angular/reusable-components-ngtemplateoutlet/

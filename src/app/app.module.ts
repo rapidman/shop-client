@@ -7,20 +7,31 @@ import {CarService} from "./shared/car/car.service";
 import {HttpClientModule} from "@angular/common/http";
 import { CarListComponent } from './car-list/car-list.component';
 import {
-  MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule,
-  MatSidenavModule,
-  MatToolbarModule
+  MatAutocompleteModule,
+  MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
+  MatDialogModule, MatDividerModule,
+  MatExpansionModule, MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatStepperModule,
+  MatTableModule, MatTabsModule,
+  MatToolbarModule, MatTooltipModule
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {GiphyService} from "./shared/giphy/giphy.service";
 import { CarEditComponent } from './car-edit/car-edit.component';
 import {RouterModule, Routes} from "@angular/router";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MainComponent } from './main/main.component';
 import { NewsComponent } from './news/news.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { AboutComponent } from './about/about.component';
 import { CatalogComponent } from './shared/catalog/catalog.component';
+import { SearchAutocompleteComponent } from './shared/search-autocomplete/search-autocomplete.component';
 
 
 const appRoutes: Routes = [
@@ -65,7 +76,8 @@ const appRoutes: Routes = [
     NewsComponent,
     FeedbackComponent,
     AboutComponent,
-    CatalogComponent
+    CatalogComponent,
+    SearchAutocompleteComponent
   ],
   imports: [
     FlexLayoutModule,
@@ -82,6 +94,42 @@ const appRoutes: Routes = [
     MatExpansionModule,
     MatSidenavModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    // MatBadgeModule,
+    // MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    // MatTreeModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [CarService, GiphyService],
