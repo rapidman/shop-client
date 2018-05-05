@@ -1,8 +1,8 @@
 <form>
   <div class="wildSrch">
     <input matInput class="sq" placeholder="" maxlength="300" aria-label="" [matAutocomplete]="auto" [formControl]="stateCtrl">
-    <input id="btnSrchClear" type="button" class="resSrch" value="Сбросить" (click)="resetItem()">
-    <input id="btnSrch" type="button" class="find" value="Искать" (click)="search()">
+    <div id="btnSrchClear" class="resSrch" (click)="resetItem()"></div>
+    <div id="btnSrch" class="find" (click)="search()"></div>
   </div>
   <mat-form-field>
     <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectCategory($event)">

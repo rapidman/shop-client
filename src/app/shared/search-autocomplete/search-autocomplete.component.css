@@ -36,6 +36,7 @@
   font-size: 0;
   color: transparent;
   background: url(../../../assets/ornament.png?12) no-repeat -143px -835px;
+  cursor: pointer;
 }
 
 .wildSrch .find {
@@ -49,4 +50,6 @@
   font-size: 0;
   color: transparent;
   background: url(../../../assets/ornament.png?12) no-repeat -215px -985px;
+  cursor: pointer;
 }
+
