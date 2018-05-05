@@ -17,6 +17,9 @@ import { CarEditComponent } from './car-edit/car-edit.component';
 import {RouterModule, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import { MainComponent } from './main/main.component';
+import { NewsComponent } from './news/news.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { AboutComponent } from './about/about.component';
 
 
 const appRoutes: Routes = [
@@ -24,6 +27,18 @@ const appRoutes: Routes = [
   {
     path: 'main',
     component: MainComponent
+  },
+  {
+    path: 'news',
+    component: NewsComponent
+  },
+  {
+    path: 'feedback',
+    component: FeedbackComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
   {
     path: 'car-list',
@@ -45,7 +60,10 @@ const appRoutes: Routes = [
     AppComponent,
     CarListComponent,
     CarEditComponent,
-    MainComponent
+    MainComponent,
+    NewsComponent,
+    FeedbackComponent,
+    AboutComponent
   ],
   imports: [
     FlexLayoutModule,
