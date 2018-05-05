@@ -42,18 +42,9 @@
               Меню
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <mat-action-row>
-            <button mat-button [routerLink]="['/main']">Главная</button>
-          </mat-action-row>
-          <mat-action-row>
-            <button mat-button [routerLink]="['/news']">Новости</button>
-          </mat-action-row>
-          <mat-action-row>
-            <button mat-button [routerLink]="['/feedback']">Напишите нам</button>
-          </mat-action-row>
-          <mat-action-row>
-            <button mat-button [routerLink]="['/about']">О компании</button>
-          </mat-action-row>
+
+          <ng-container *ngTemplateOutlet="menuExpansionPanelContent"></ng-container>
+
         </mat-expansion-panel>
 
         <mat-expansion-panel [expanded]="false" class="expansion-panel">
@@ -62,15 +53,9 @@
               Каталог товаров
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <mat-action-row>
-            Комплекты постельного белья
-          </mat-action-row>
-          <mat-action-row>
-            Матрацы ватные
-          </mat-action-row>
-          <mat-action-row>
-            Подушки
-          </mat-action-row>
+
+          <ng-container *ngTemplateOutlet="catalogExpansionPanelContent"></ng-container>
+
         </mat-expansion-panel>
       </mat-accordion>
     </mat-sidenav>
@@ -83,4 +68,30 @@
 
   </mat-sidenav-container>
 
+  <ng-template #menuExpansionPanelContent>
+    <mat-action-row>
+      <button mat-button [routerLink]="['/main']">Главная</button>
+    </mat-action-row>
+    <mat-action-row>
+      <button mat-button [routerLink]="['/news']">Новости</button>
+    </mat-action-row>
+    <mat-action-row>
+      <button mat-button [routerLink]="['/feedback']">Напишите нам</button>
+    </mat-action-row>
+    <mat-action-row>
+      <button mat-button [routerLink]="['/about']">О компании</button>
+    </mat-action-row>
+  </ng-template>
+
+  <ng-template #catalogExpansionPanelContent>
+    <mat-action-row>
+      Комплекты постельного белья
+    </mat-action-row>
+    <mat-action-row>
+      Матрацы ватные
+    </mat-action-row>
+    <mat-action-row>
+      Подушки
+    </mat-action-row>
+  </ng-template>
 </div>

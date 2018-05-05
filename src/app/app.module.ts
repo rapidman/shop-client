@@ -20,6 +20,7 @@ import { MainComponent } from './main/main.component';
 import { NewsComponent } from './news/news.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { AboutComponent } from './about/about.component';
+import { CatalogComponent } from './shared/catalog/catalog.component';
 
 
 const appRoutes: Routes = [
@@ -63,7 +64,8 @@ const appRoutes: Routes = [
     MainComponent,
     NewsComponent,
     FeedbackComponent,
-    AboutComponent
+    AboutComponent,
+    CatalogComponent
   ],
   imports: [
     FlexLayoutModule,

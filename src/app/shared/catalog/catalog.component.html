@@ -1,0 +1,21 @@
+<mat-expansion-panel [expanded]="true" class="expansion-panel">
+  <mat-expansion-panel-header class="expansion-panel-header">
+    <mat-panel-title>
+      Каталог товаров
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <ng-container *ngTemplateOutlet="catalogExpansionPanelContent"></ng-container>
+</mat-expansion-panel>
+
+
+<ng-template #catalogExpansionPanelContent>
+  <mat-action-row>
+    Комплекты постельного белья
+  </mat-action-row>
+  <mat-action-row>
+    Матрацы ватные
+  </mat-action-row>
+  <mat-action-row>
+    Подушки
+  </mat-action-row>
+</ng-template>
