@@ -1,8 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {FormControl} from '@angular/forms';
 
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import {Router} from "@angular/router";
+import {MatAutocompleteTrigger} from "@angular/material";
 
 export class State {
   constructor(public name: string, public population: string, public flag: string) { }
@@ -19,6 +21,7 @@ export class State {
 export class SearchAutocompleteComponent {
   stateCtrl: FormControl;
   filteredStates: Observable<any[]>;
+  @ViewChild(MatAutocompleteTrigger) autocompleteTrigger: MatAutocompleteTrigger;
 
   states: State[] = [
     {
@@ -47,7 +50,8 @@ export class SearchAutocompleteComponent {
     }
   ];
 
-  constructor() {
+  constructor(private router: Router) {
+    this.router = router;
     this.stateCtrl = new FormControl();
     this.filteredStates = this.stateCtrl.valueChanges
       .pipe(
@@ -70,7 +74,12 @@ export class SearchAutocompleteComponent {
   }
 
   search() {
-    alert(this.stateCtrl.value);
+    this.closeAutocomplete();
+    this.router.navigate(['/car-list']);
+  }
+
+  closeAutocomplete() {
+    this.autocompleteTrigger.closePanel();
   }
 }
 
