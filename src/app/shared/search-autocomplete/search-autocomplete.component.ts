@@ -3,9 +3,12 @@ import {FormControl} from '@angular/forms';
 import {Router} from "@angular/router";
 import {MatAutocompleteTrigger} from "@angular/material";
 import {DetailService} from "../detail/detail.service";
+import {Observable} from "rxjs/Observable";
+import {map, startWith} from "rxjs/operators";
 
 export class State {
-  constructor(public name: string, public population: string, public flag: string) { }
+  constructor(public name: string, public population: string, public flag: string) {
+  }
 }
 
 /**
@@ -27,6 +30,9 @@ export class SearchAutocompleteComponent {
     this.stateCtrl = new FormControl();
     this.stateCtrl.valueChanges
       .subscribe(name => {
+        if(name.length < 2){
+          return;
+        }
         this.detailService.getAutoComplete(name)
           .subscribe(res => {
             console.log(res);
@@ -36,16 +42,21 @@ export class SearchAutocompleteComponent {
   }
 
   selectCategory(category: any) {
-   // alert(category.option.value);
+    // alert(category.option.value);
   }
 
   resetItem() {
-    this.stateCtrl.setValue('');
+    if (this.stateCtrl) {
+      this.stateCtrl.setValue('');
+      this.goods = null;
+    }
   }
 
   search() {
     // this.closeAutocomplete();
-    this.router.navigate(['/search-result', this.stateCtrl.value]);
+    if (this.stateCtrl.value) {
+      this.router.navigate(['/search-result', this.stateCtrl.value]);
+    }
   }
 
   closeAutocomplete() {
