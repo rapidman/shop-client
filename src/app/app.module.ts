@@ -33,6 +33,7 @@ import { AboutComponent } from './about/about.component';
 import { CatalogComponent } from './shared/catalog/catalog.component';
 import { SearchAutocompleteComponent } from './shared/search-autocomplete/search-autocomplete.component';
 import { SearchResultComponent } from './shared/search-result/search-result.component';
+import { DetailComponent } from './detail/detail.component';
 
 
 const appRoutes: Routes = [
@@ -56,6 +57,10 @@ const appRoutes: Routes = [
   {
     path: 'search-result/:query',
     component: SearchResultComponent
+  },
+  {
+    path: 'detail/:id',
+    component: DetailComponent
   },
   {
     path: 'car-list',
@@ -83,7 +88,8 @@ const appRoutes: Routes = [
     AboutComponent,
     CatalogComponent,
     SearchAutocompleteComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    DetailComponent
   ],
   imports: [
     FlexLayoutModule,

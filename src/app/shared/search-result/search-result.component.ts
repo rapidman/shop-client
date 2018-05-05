@@ -11,10 +11,10 @@ export class SearchResultComponent implements OnInit {
   sub: Subscription;
 
   tiles: any[] = [
-    {text: 'One', cols: 1, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 1, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 1, rows: 1, color: '#DDBDF1'},
+    {id: 1, text: 'One', cols: 1, rows: 1, color: 'lightblue'},
+    {id: 2, text: 'Two', cols: 1, rows: 1, color: 'lightgreen'},
+    {id: 3, text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
+    {id: 4, text: 'Four', cols: 1, rows: 1, color: '#DDBDF1'},
   ];
 
   constructor(private route: ActivatedRoute) { }
