@@ -33,12 +33,6 @@
 
     <mat-sidenav #sidenav fxLayout="column">
 
-      <div fxLayout="column">
-        <button md-button (click)="sidenav.close()">
-          Close sidenav
-        </button>
-      </div>
-
       <mat-accordion multi="false">
         <mat-expansion-panel [expanded]="false" class="expansion-panel">
           <mat-expansion-panel-header class="expansion-panel-header">
@@ -51,16 +45,8 @@
 
         </mat-expansion-panel>
 
-        <mat-expansion-panel [expanded]="false" class="expansion-panel">
-          <mat-expansion-panel-header class="expansion-panel-header">
-            <mat-panel-title>
-              Каталог товаров
-            </mat-panel-title>
-          </mat-expansion-panel-header>
+        <app-catalog></app-catalog>
 
-          <ng-container *ngTemplateOutlet="catalogExpansionPanelContent"></ng-container>
-
-        </mat-expansion-panel>
       </mat-accordion>
     </mat-sidenav>
 
@@ -87,15 +73,4 @@
     </mat-action-row>
   </ng-template>
 
-  <ng-template #catalogExpansionPanelContent>
-    <mat-action-row>
-      Комплекты постельного белья
-    </mat-action-row>
-    <mat-action-row>
-      Матрацы ватные
-    </mat-action-row>
-    <mat-action-row>
-      Подушки
-    </mat-action-row>
-  </ng-template>
 </div>
