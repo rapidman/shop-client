@@ -31,6 +31,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
  - https://angular-ui.github.io/
  - https://github.com/angular/angular-cli
  - http://adaptive-shoes-shop.oml.ru/
+ - https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy#c5576059
  - https://github.com/angular/flex-layout/wiki/fxFlex-API
  - https://github.com/angular/flex-layout/wiki/API-Documentation#containers
  - https://docs.angularjs.org/tutorial/step_14
