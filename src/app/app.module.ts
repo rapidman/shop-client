@@ -34,6 +34,7 @@ import { CatalogComponent } from './shared/catalog/catalog.component';
 import { SearchAutocompleteComponent } from './shared/search-autocomplete/search-autocomplete.component';
 import { SearchResultComponent } from './shared/search-result/search-result.component';
 import { DetailComponent } from './detail/detail.component';
+import {DetailService} from "./shared/detail/detail.service";
 
 
 const appRoutes: Routes = [
@@ -144,7 +145,7 @@ const appRoutes: Routes = [
     // MatTreeModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [CarService, GiphyService],
+  providers: [CarService, GiphyService, DetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
