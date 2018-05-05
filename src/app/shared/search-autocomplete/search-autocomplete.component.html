@@ -2,10 +2,10 @@
   <mat-form-field>
     <div class="wildSrch">
       <input matInput class="sq" placeholder="" maxlength="300" aria-label="" [matAutocomplete]="auto" [formControl]="stateCtrl">
-      <input id="btnSrchClear" type="button" class="resSrch" value="Сбросить">
-      <input id="btnSrch" type="button" class="find" value="Искать">
+      <input id="btnSrchClear" type="button" class="resSrch" value="Сбросить" (click)="resetItem()">
+      <input id="btnSrch" type="button" class="find" value="Искать" (click)="search()">
     </div>
-    <mat-autocomplete #auto="matAutocomplete">
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectCategory($event)">
       <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
         <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" />
         <span>{{ state.name }}</span> |

@@ -61,6 +61,17 @@ export class SearchAutocompleteComponent {
       state.name.toLowerCase().indexOf(name.toLowerCase()) === 0);
   }
 
+  selectCategory(category: any) {
+   // alert(category.option.value);
+  }
+
+  resetItem() {
+    this.stateCtrl.setValue('');
+  }
+
+  search() {
+    alert(this.stateCtrl.value);
+  }
 }
 
 
