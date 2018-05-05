@@ -3,8 +3,9 @@ import {FormControl} from '@angular/forms';
 
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {MatAutocompleteTrigger} from "@angular/material";
+import {Subscription} from "rxjs/Subscription";
 
 export class State {
   constructor(public name: string, public population: string, public flag: string) { }
@@ -74,8 +75,8 @@ export class SearchAutocompleteComponent {
   }
 
   search() {
-    this.closeAutocomplete();
-    this.router.navigate(['/search-result']);
+    // this.closeAutocomplete();
+    this.router.navigate(['/search-result', this.stateCtrl.value]);
   }
 
   closeAutocomplete() {

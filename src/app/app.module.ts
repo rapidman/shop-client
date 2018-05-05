@@ -54,7 +54,7 @@ const appRoutes: Routes = [
     component: AboutComponent
   },
   {
-    path: 'search-result',
+    path: 'search-result/:query',
     component: SearchResultComponent
   },
   {

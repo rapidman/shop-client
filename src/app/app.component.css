@@ -1,9 +1,9 @@
-.expansion-panel{
+.expansion-panel {
   margin-bottom: 0px;
   margin-top: 0px;
 }
 
-.expansion-panel-header{
+.expansion-panel-header {
   height: 28px;
 }
 
@@ -28,7 +28,6 @@
 .right-col {
   background-color: azure;
 }
-
 
 .example-icon {
   padding: 0 14px;

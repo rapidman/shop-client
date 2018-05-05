@@ -1,18 +1,17 @@
 <form>
   <div class="wildSrch">
-    <input matInput class="sq" placeholder="" maxlength="300" aria-label="" [matAutocomplete]="auto" [formControl]="stateCtrl">
-    <div id="btnSrchClear" class="resSrch" (click)="resetItem()"></div>
-    <div id="btnSrch" class="find" (click)="search()"></div>
+    <input matInput class="sq" placeholder="" maxlength="300" aria-label="" [matAutocomplete]="auto"
+           [formControl]="stateCtrl">
+    <div class="resSrch" (click)="resetItem()" md-tooltip="some message" tooltip-position="below"></div>
+    <div class="find" (click)="search()"></div>
   </div>
-  <mat-form-field>
-    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectCategory($event)">
-      <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
-        <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" />
-        <span>{{ state.name }}</span> |
-        <small>Population: {{state.population}}</small>
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectCategory($event)">
+    <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+      <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25"/>
+      <span>{{ state.name }}</span> |
+      <small>Population: {{state.population}}</small>
+    </mat-option>
+  </mat-autocomplete>
 </form>
 
 
