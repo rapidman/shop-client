@@ -32,6 +32,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { AboutComponent } from './about/about.component';
 import { CatalogComponent } from './shared/catalog/catalog.component';
 import { SearchAutocompleteComponent } from './shared/search-autocomplete/search-autocomplete.component';
+import { SearchResultComponent } from './shared/search-result/search-result.component';
 
 
 const appRoutes: Routes = [
@@ -51,6 +52,10 @@ const appRoutes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'search-result',
+    component: SearchResultComponent
   },
   {
     path: 'car-list',
@@ -77,7 +82,8 @@ const appRoutes: Routes = [
     FeedbackComponent,
     AboutComponent,
     CatalogComponent,
-    SearchAutocompleteComponent
+    SearchAutocompleteComponent,
+    SearchResultComponent
   ],
   imports: [
     FlexLayoutModule,

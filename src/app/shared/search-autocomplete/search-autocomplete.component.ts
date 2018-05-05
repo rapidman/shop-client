@@ -75,7 +75,7 @@ export class SearchAutocompleteComponent {
 
   search() {
     this.closeAutocomplete();
-    this.router.navigate(['/car-list']);
+    this.router.navigate(['/search-result']);
   }
 
   closeAutocomplete() {
