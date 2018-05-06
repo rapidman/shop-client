@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { UICarouselModule } from 'ui-carousel';
 
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { AppComponent } from './app.component';
@@ -35,6 +36,7 @@ import { SearchAutocompleteComponent } from './shared/search-autocomplete/search
 import { SearchResultComponent } from './shared/search-result/search-result.component';
 import { DetailComponent } from './detail/detail.component';
 import {DetailService} from "./shared/detail/detail.service";
+import { InfiniteCarouselComponent } from './shared/infinite-carousel/infinite-carousel.component';
 
 
 const appRoutes: Routes = [
@@ -90,7 +92,8 @@ const appRoutes: Routes = [
     CatalogComponent,
     SearchAutocompleteComponent,
     SearchResultComponent,
-    DetailComponent
+    DetailComponent,
+    InfiniteCarouselComponent
   ],
   imports: [
     FlexLayoutModule,
@@ -143,7 +146,8 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatTooltipModule,
     // MatTreeModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    UICarouselModule
   ],
   providers: [CarService, GiphyService, DetailService],
   bootstrap: [AppComponent]

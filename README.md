@@ -39,3 +39,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
  - https://kyleledbetter.gitbooks.io/angular-material-2/card.html
  - https://material.angularjs.org/latest/demo/dialog
  - https://github.com/angular/material/tree/master/docs/app/img/icons
+ - https://github.com/bougarfaoui/ui-carousel
