@@ -2,7 +2,7 @@
 
   <mat-toolbar color="primary">
 
-    <span>Logo</span>
+    <div class="logo"></div>
 
     <app-search-autocomplete></app-search-autocomplete>
 
@@ -10,10 +10,10 @@
 
     <div fxShow="true" fxHide.lt-md="true">
 
-      <button mat-button [routerLink]="['/main']">Главная</button>
-      <button mat-button [routerLink]="['/news']">Новости</button>
-      <button mat-button [routerLink]="['/feedback']">Напишите нам</button>
-      <button mat-button [routerLink]="['/about']">О компании</button>
+      <button mat-button [routerLink]="['/main']" routerLinkActive="active">Главная</button>
+      <button mat-button [routerLink]="['/news']" routerLinkActive="active">Новости</button>
+      <button mat-button [routerLink]="['/feedback']" routerLinkActive="active">Напишите нам</button>
+      <button mat-button [routerLink]="['/about']" routerLinkActive="active">О компании</button>
 
     </div>
 

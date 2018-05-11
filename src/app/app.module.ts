@@ -43,11 +43,11 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
   {
     path: 'main',
-    component: MainComponent
+    component: MainComponent, data: { state: 'home' }
   },
   {
     path: 'news',
-    component: NewsComponent
+    component: NewsComponent, data: { state: 'news' }
   },
   {
     path: 'feedback',
@@ -79,6 +79,7 @@ const appRoutes: Routes = [
   }
 ];
 
+export const routedComponents = [MainComponent, NewsComponent];
 
 @NgModule({
   declarations: [
@@ -93,7 +94,8 @@ const appRoutes: Routes = [
     SearchAutocompleteComponent,
     SearchResultComponent,
     DetailComponent,
-    InfiniteCarouselComponent
+    InfiniteCarouselComponent,
+    routedComponents
   ],
   imports: [
     FlexLayoutModule,
@@ -149,7 +151,12 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     UICarouselModule
   ],
+  exports: [RouterModule],
   providers: [CarService, GiphyService, DetailService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  getState(outlet) {
+    return outlet.activatedRouteData.state;
+  }
+}

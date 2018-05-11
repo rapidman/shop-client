@@ -5,3 +5,13 @@ body {
   margin: 0;
   font-family: Roboto, sans-serif;
 }
+
+.logo {
+  background: url("assets/logo.png") no-repeat;
+  width: 100px;
+  height: 50px;
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover; /* Mozilla*/
+  -o-background-size: cover; /* Opera*/
+  background-size: cover; /* Generic*/
+}
