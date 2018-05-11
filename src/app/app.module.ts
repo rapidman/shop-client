@@ -1,12 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { UICarouselModule } from 'ui-carousel';
+import {BrowserModule} from '@angular/platform-browser';
+import {Component, NgModule} from '@angular/core';
+import {UICarouselModule} from 'ui-carousel';
 
 import {FlexLayoutModule} from '@angular/flex-layout';
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {CarService} from "./shared/car/car.service";
 import {HttpClientModule} from "@angular/common/http";
-import { CarListComponent } from './car-list/car-list.component';
+import {CarListComponent} from './car-list/car-list.component';
 import {
   MatAutocompleteModule,
   MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
@@ -24,30 +24,30 @@ import {
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {GiphyService} from "./shared/giphy/giphy.service";
-import { CarEditComponent } from './car-edit/car-edit.component';
+import {CarEditComponent} from './car-edit/car-edit.component';
 import {RouterModule, Routes} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { MainComponent } from './main/main.component';
-import { NewsComponent } from './news/news.component';
-import { FeedbackComponent } from './feedback/feedback.component';
-import { AboutComponent } from './about/about.component';
-import { CatalogComponent } from './shared/catalog/catalog.component';
-import { SearchAutocompleteComponent } from './shared/search-autocomplete/search-autocomplete.component';
-import { SearchResultComponent } from './shared/search-result/search-result.component';
-import { DetailComponent } from './detail/detail.component';
+import {MainComponent} from './main/main.component';
+import {NewsComponent} from './news/news.component';
+import {FeedbackComponent} from './feedback/feedback.component';
+import {AboutComponent} from './about/about.component';
+import {CatalogComponent} from './shared/catalog/catalog.component';
+import {SearchAutocompleteComponent} from './shared/search-autocomplete/search-autocomplete.component';
+import {SearchResultComponent} from './shared/search-result/search-result.component';
+import {DetailComponent} from './detail/detail.component';
 import {DetailService} from "./shared/detail/detail.service";
-import { InfiniteCarouselComponent } from './shared/infinite-carousel/infinite-carousel.component';
+import {InfiniteCarouselComponent} from './shared/infinite-carousel/infinite-carousel.component';
 
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  {path: '', redirectTo: '/main', pathMatch: 'full'},
   {
     path: 'main',
-    component: MainComponent, data: { state: 'home' }
+    component: MainComponent, data: {state: 'home'}
   },
   {
     path: 'news',
-    component: NewsComponent, data: { state: 'news' }
+    component: NewsComponent, data: {state: 'news'}
   },
   {
     path: 'feedback',
@@ -148,15 +148,16 @@ export const routedComponents = [MainComponent, NewsComponent];
     MatToolbarModule,
     MatTooltipModule,
     // MatTreeModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {
+      useHash: true
+    }),
     UICarouselModule
   ],
   exports: [RouterModule],
   providers: [CarService, GiphyService, DetailService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
-  getState(outlet) {
-    return outlet.activatedRouteData.state;
-  }
 }
+

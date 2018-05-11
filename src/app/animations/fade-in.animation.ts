@@ -1,15 +1,34 @@
-import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
+import { trigger, animate, transition, style, query } from '@angular/animations';
 
-export const fadeInAnimation =
-  trigger('fadeInAnimation', [
-    // route 'enter' transition
-    transition('* => *', [
+export const fadeAnimation =
 
-      query(':enter', stagger('300ms', [
-        animate('.1s ease-in', keyframes([
-          style({opacity: 0, transform: 'translateX(-75%)', offset: 0}),
-          style({opacity: .5, transform: 'translateX(35px)',  offset: 0.3}),
-          style({opacity: 1, transform: 'translateX(0)',     offset: 1.0}),
-        ]))]), {optional: true})
+  trigger('fadeAnimation', [
+
+    transition( '* => *', [
+
+      query(':enter',
+        [
+          style({ opacity: 0 })
+        ],
+        { optional: true }
+      ),
+
+      query(':leave',
+        [
+          style({ opacity: 1 }),
+          animate('0.5s', style({ opacity: 0 }))
+        ],
+        { optional: true }
+      ),
+
+      query(':enter',
+        [
+          style({ opacity: 0 }),
+          animate('0.5s', style({ opacity: 1 }))
+        ],
+        { optional: true }
+      )
+
     ])
+
   ]);
