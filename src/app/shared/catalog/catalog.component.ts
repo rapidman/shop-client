@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class CatalogComponent implements OnInit {
 
   items: any[] = [
-    { title: 'Item 1' },
-    { title: 'Item 2' },
-    { title: 'Item 3' }
+    { title: 'Item 1', link: 'http://localhost' },
+    { title: 'Item 2', link: 'http://localhost' },
+    { title: 'Item 3', link: 'http://localhost' }
   ];
 
   constructor() { }
