@@ -36,13 +36,13 @@ export class SearchAutocompleteComponent {
         this.detailService.getAutoComplete(name)
           .subscribe(res => {
             console.log(res);
-            return this.goods = res['_embedded']['goods'];
+            return this.goods = res['_embedded']['categories'];
           })
       })
   }
 
   selectCategory(category: any) {
-    // alert(category.option.value);
+    this.router.navigate(['/search-result', category.option.value]);
   }
 
   resetItem() {

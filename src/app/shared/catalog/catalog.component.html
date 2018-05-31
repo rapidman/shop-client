@@ -9,13 +9,7 @@
 
 
 <ng-template #catalogExpansionPanelContent>
-  <mat-action-row>
-    Комплекты постельного белья
-  </mat-action-row>
-  <mat-action-row>
-    Матрацы ватные
-  </mat-action-row>
-  <mat-action-row>
-    Подушки
-  </mat-action-row>
+  <mat-list-item *ngFor="let item of items">
+    {{item.title}}
+  </mat-list-item>
 </ng-template>

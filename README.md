@@ -41,4 +41,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
  - https://github.com/angular/material/tree/master/docs/app/img/icons
  - https://github.com/bougarfaoui/ui-carousel
  - https://www.freelogoservices.com
- - http://jasonwatmore.com/post/2017/04/19/angular-2-4-router-animation-tutorial-example
+ - https://stackblitz.com/edit/angular-router-fade-transitions?file=app%2Fapp.component.scss

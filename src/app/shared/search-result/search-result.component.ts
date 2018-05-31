@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
+import {DetailService} from "../detail/detail.service";
 
 @Component({
   selector: 'app-search-result',
@@ -10,20 +11,24 @@ import {Subscription} from "rxjs/Subscription";
 export class SearchResultComponent implements OnInit {
   sub: Subscription;
 
-  tiles: any[] = [
-    {id: 1, text: 'One', cols: 1, rows: 1, color: 'lightblue'},
-    {id: 2, text: 'Two', cols: 1, rows: 1, color: 'lightgreen'},
-    {id: 3, text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {id: 4, text: 'Four', cols: 1, rows: 1, color: '#DDBDF1'},
-  ];
+  tiles: any[];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private detailService: DetailService) {
+    this.detailService = this.detailService;
+  }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       const query = params['query'];
       if (query) {
-        // alert(query);
+        this.detailService.findGoodsByQuery(query).subscribe(data => {
+          alert(JSON.stringify(data['_embedded']['goods']));
+          this.tiles = data['_embedded']['goods'];
+          // for (const car of this.cars) {
+          //   this.giphyService.get(car.name).subscribe(url => car.giphyUrl = url);
+          // }
+        });
+
       }
     });
   }
