@@ -35,8 +35,9 @@ import {CatalogComponent} from './shared/catalog/catalog.component';
 import {SearchAutocompleteComponent} from './shared/search-autocomplete/search-autocomplete.component';
 import {SearchResultComponent} from './shared/search-result/search-result.component';
 import {DetailComponent} from './detail/detail.component';
-import {DetailService} from "./shared/detail/detail.service";
 import {InfiniteCarouselComponent} from './shared/infinite-carousel/infinite-carousel.component';
+import {DetailService} from "./shared/service/detail/detail.service";
+import {CatalogService} from "./shared/service/catalog/catalog.service";
 
 
 const appRoutes: Routes = [
@@ -154,7 +155,7 @@ export const routedComponents = [MainComponent, NewsComponent];
     UICarouselModule
   ],
   exports: [RouterModule],
-  providers: [CarService, GiphyService, DetailService],
+  providers: [CarService, GiphyService, DetailService, CatalogService],
   bootstrap: [AppComponent]
 })
 

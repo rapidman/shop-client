@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CatalogService} from "../service/catalog/catalog.service";
 
 @Component({
   selector: 'app-catalog',
@@ -13,7 +14,9 @@ export class CatalogComponent implements OnInit {
     { title: 'Item 3', link: 'http://localhost' }
   ];
 
-  constructor() { }
+  constructor(private catalogService: CatalogService) {
+    this.catalogService = this.catalogService;
+  }
 
   ngOnInit() {
   }

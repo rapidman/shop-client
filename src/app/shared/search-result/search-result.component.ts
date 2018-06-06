@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
-import {DetailService} from "../detail/detail.service";
+import {DetailService} from "../service/detail/detail.service";
 
 @Component({
   selector: 'app-search-result',
@@ -28,7 +28,6 @@ export class SearchResultComponent implements OnInit {
           //   this.giphyService.get(car.name).subscribe(url => car.giphyUrl = url);
           // }
         });
-
       }
     });
   }

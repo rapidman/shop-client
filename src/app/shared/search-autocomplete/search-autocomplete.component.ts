@@ -2,9 +2,9 @@ import {Component, ViewChild} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Router} from "@angular/router";
 import {MatAutocompleteTrigger} from "@angular/material";
-import {DetailService} from "../detail/detail.service";
 import {Observable} from "rxjs/Observable";
 import {map, startWith} from "rxjs/operators";
+import {DetailService} from "../service/detail/detail.service";
 
 export class State {
   constructor(public name: string, public population: string, public flag: string) {
