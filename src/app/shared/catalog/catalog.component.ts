@@ -8,17 +8,15 @@ import {CatalogService} from "../service/catalog/catalog.service";
 })
 export class CatalogComponent implements OnInit {
 
-  items: any[] = [
-    { title: 'Item 1', link: 'http://localhost' },
-    { title: 'Item 2', link: 'http://localhost' },
-    { title: 'Item 3', link: 'http://localhost' }
-  ];
+  items: Array<any>;
 
   constructor(private catalogService: CatalogService) {
     this.catalogService = this.catalogService;
   }
 
   ngOnInit() {
+    this.catalogService.getAll().subscribe(data => {
+      this.items = data.content;
+    });
   }
-
 }

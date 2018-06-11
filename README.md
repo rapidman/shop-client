@@ -42,3 +42,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
  - https://github.com/bougarfaoui/ui-carousel
  - https://www.freelogoservices.com
  - https://stackblitz.com/edit/angular-router-fade-transitions?file=app%2Fapp.component.scss
+ - https://github.com/angular/angular-cli/blob/master/packages/angular/cli/README.md
