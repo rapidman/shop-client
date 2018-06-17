@@ -38,6 +38,7 @@ import {DetailComponent} from './detail/detail.component';
 import {InfiniteCarouselComponent} from './shared/infinite-carousel/infinite-carousel.component';
 import {DetailService} from "./shared/service/detail/detail.service";
 import {CatalogService} from "./shared/service/catalog/catalog.service";
+import { CategoryComponent } from './category/category.component';
 
 
 const appRoutes: Routes = [
@@ -61,6 +62,10 @@ const appRoutes: Routes = [
   {
     path: 'search-result/:query',
     component: SearchResultComponent
+  },
+  {
+    path: 'category/:id',
+    component: CategoryComponent
   },
   {
     path: 'detail/:id',
@@ -96,7 +101,8 @@ export const routedComponents = [MainComponent, NewsComponent];
     SearchResultComponent,
     DetailComponent,
     InfiniteCarouselComponent,
-    routedComponents
+    routedComponents,
+    CategoryComponent
   ],
   imports: [
     FlexLayoutModule,

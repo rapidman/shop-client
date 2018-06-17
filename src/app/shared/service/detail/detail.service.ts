@@ -5,7 +5,7 @@ import {Observable} from "rxjs/Observable";
 @Injectable()
 export class DetailService {
 
-  public API = '//localhost:8080';
+  public API = '//localhost:8080/api/v1';
   public GOODS_API = this.API + '/goods';
   public CATEGORIES_API = this.API + '/categories';
 
