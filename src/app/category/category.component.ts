@@ -10,6 +10,7 @@ import {Subscription} from "rxjs/Subscription";
 })
 export class CategoryComponent implements OnInit {
   sub: Subscription;
+  tiles: any[];
 
   constructor(private route: ActivatedRoute, private detailService: DetailService) {
     this.detailService = this.detailService;
@@ -20,13 +21,10 @@ export class CategoryComponent implements OnInit {
       const query = params['id'];
       alert(query);
       if (query) {
-        // this.detailService.findGoodsByQuery(query).subscribe(data => {
-        //   alert(JSON.stringify(data['_embedded']['goods']));
-        //   this.tiles = data['_embedded']['goods'];
-        //   // for (const car of this.cars) {
-        //   //   this.giphyService.get(car.name).subscribe(url => car.giphyUrl = url);
-        //   // }
-        // });
+        this.detailService.findGoodsByCategoryId(query).subscribe(data => {
+          alert(JSON.stringify(data['content']));
+          this.tiles = data['content'];
+        });
       }
     });
   }

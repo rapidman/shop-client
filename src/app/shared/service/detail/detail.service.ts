@@ -26,12 +26,12 @@ export class DetailService {
   }
 
   findGoodsByQuery(query: string): Observable<any> {
-    // return "[ {id: 1, text: 'One', cols: 1, rows: 1, color: 'lightblue'}, " +
-    //   "{id: 2, text: 'Two', cols: 1, rows: 1, color: 'lightgreen'}," +
-    //   "{id: 3, text: 'Three', cols: 1, rows: 1, color: 'lightpink'}, " +
-    //   "{id: 4, text: 'Four', cols: 1, rows: 1, color: '#DDBDF1'},]";
     return this.http.get(this.GOODS_API + '/search/findByCategoryNameIgnoreCaseContainingOrderByName?categoryName=' + query +
     "&page=0&size=100");
+  }
+
+  findGoodsByCategoryId(query: string): Observable<any> {
+    return this.http.get(this.GOODS_API + '?categoryId=' + query + "&page=0&size=100");
   }
 
 }
