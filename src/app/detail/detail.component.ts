@@ -4,6 +4,7 @@ import {CarService} from "../shared/car/car.service";
 import {NgForm} from "@angular/forms";
 import {GiphyService} from "../shared/giphy/giphy.service";
 import {Subscription} from "rxjs/Subscription";
+import {DetailService} from "../shared/service/detail/detail.service";
 
 @Component({
   selector: 'app-detail',
@@ -19,7 +20,7 @@ export class DetailComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private carService: CarService,
-              private giphyService: GiphyService) {
+              private detailService: DetailService) {
   }
 
   ngOnInit() {
@@ -27,6 +28,9 @@ export class DetailComponent implements OnInit {
       const id = params['id'];
       if (id) {
         alert(id);
+        this.detailService.findGoodsById(id).subscribe(data => {
+          this.detail = data;
+        });
       }
     });
   }

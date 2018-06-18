@@ -19,10 +19,8 @@ export class CategoryComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       const query = params['id'];
-      alert(query);
       if (query) {
         this.detailService.findGoodsByCategoryId(query).subscribe(data => {
-          alert(JSON.stringify(data['content']));
           this.tiles = data['content'];
         });
       }
