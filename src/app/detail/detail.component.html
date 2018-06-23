@@ -8,10 +8,9 @@
     <mat-card>
       <form #detailForm="ngForm" (ngSubmit)="save(detailForm.value)">
         <mat-card-header>
-          <mat-card-title><h2>{{detail.name ? 'Edit' : 'Add'}} Goods</h2></mat-card-title>
+          <mat-card-title><h2>{{detail.name}}</h2></mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <!--<input type="hidden" name="href" [(ngModel)]="detail.href">-->
           <mat-form-field>
             <input matInput placeholder="Name" [(ngModel)]="detail.name"
                    required name="name" #name>
