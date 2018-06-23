@@ -8,6 +8,7 @@ export class DetailService {
   public API = '//localhost:8080/api/v1';
   public GOODS_API = this.API + '/goods';
   public CATEGORIES_API = this.API + '/categories';
+  public SEARCH_CATEGORIES_API = this.API + '/categories/search';
 
   constructor(private http: HttpClient) {
   }
@@ -20,9 +21,8 @@ export class DetailService {
     return this.http.get(this.CATEGORIES_API + '/' + id);
   }
 
-  getAutoComplete(name: string) {
-    return this.http.get(this.CATEGORIES_API + '/search/findByNameIgnoreCaseContainingOrderByName?name=' + name +
-      "&page=0&size=100");
+  getAutoComplete(query: string) {
+    return this.http.get(this.SEARCH_CATEGORIES_API + '/?query=' + query + "&page=0&size=100");
   }
 
   findGoodsByQuery(query: string): Observable<any> {

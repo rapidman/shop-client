@@ -36,7 +36,7 @@ export class SearchAutocompleteComponent {
         this.detailService.getAutoComplete(name)
           .subscribe(res => {
             console.log(res);
-            return this.goods = res['_embedded']['categories'];
+            return this.goods = res['content'];
           })
       })
   }

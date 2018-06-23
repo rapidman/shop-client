@@ -19,14 +19,11 @@ export class SearchResultComponent implements OnInit {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      const query = params['query'];
-      if (query) {
-        this.detailService.findGoodsByQuery(query).subscribe(data => {
-          alert(JSON.stringify(data['_embedded']['goods']));
-          this.tiles = data['_embedded']['goods'];
-          // for (const car of this.cars) {
-          //   this.giphyService.get(car.name).subscribe(url => car.giphyUrl = url);
-          // }
+      const categoryId = params['query'];
+      if (categoryId) {
+        this.detailService.findGoodsByCategoryId(categoryId).subscribe(data => {
+          alert(JSON.stringify(data['content']));
+          this.tiles = data['content'];
         });
       }
     });

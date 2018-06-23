@@ -6,7 +6,7 @@
     <div class="find" (click)="search()"></div>
   </div>
   <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectCategory($event)">
-    <mat-option *ngFor="let product of goods" [value]="product.name">
+    <mat-option *ngFor="let product of goods" [value]="product.id">
       <span>{{ product.name }}</span>
     </mat-option>
   </mat-autocomplete>
