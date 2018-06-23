@@ -22,7 +22,6 @@ export class SearchResultComponent implements OnInit {
       const categoryId = params['query'];
       if (categoryId) {
         this.detailService.findGoodsByCategoryId(categoryId).subscribe(data => {
-          alert(JSON.stringify(data['content']));
           this.tiles = data['content'];
         });
       }

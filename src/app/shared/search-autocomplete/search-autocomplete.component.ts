@@ -43,6 +43,7 @@ export class SearchAutocompleteComponent {
 
   selectCategory(category: any) {
     this.router.navigate(['/search-result', category.option.value]);
+    this.resetItem();
   }
 
   resetItem() {
