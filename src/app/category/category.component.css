@@ -1,0 +1,8 @@
+a.mini_card__title{
+  font-size: 17px;
+  line-height: 20px;
+  font-family: 'Oranienbaum', sans-serif;
+  height: 40px;
+  overflow: hidden;
+  display: block;
+}

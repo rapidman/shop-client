@@ -1,15 +1,10 @@
 <mat-expansion-panel [expanded]="true" class="expansion-panel">
-  <mat-expansion-panel-header class="expansion-panel-header">
-    <mat-panel-title>
-      Каталог товаров
-    </mat-panel-title>
-  </mat-expansion-panel-header>
   <ng-container *ngTemplateOutlet="catalogExpansionPanelContent"></ng-container>
 </mat-expansion-panel>
 
 
 <ng-template #catalogExpansionPanelContent>
   <mat-nav-list>
-    <mat-list-item *ngFor="let item of items" [routerLink]="['/category', item.id]"> {{ item.name }} </mat-list-item>
+    <mat-list-item *ngFor="let item of items" [routerLink]="['/category', item.id]"> {{ item.name }} [{{ item.goodsSize }}]</mat-list-item>
   </mat-nav-list>
 </ng-template>

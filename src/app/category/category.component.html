@@ -1,26 +1,52 @@
-<div class="container"  fxShow="true" fxHide.lt-md="true" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
-  <div fxFlex="20%">
+<div class="container" fxShow="true" fxHide.lt-md="false" fxLayout="row" fxLayout.xs="column" fxLayoutWrap
+     fxLayoutGap="0%" fxLayoutAlign="center">
+  <div fxFlex="15%">
     <mat-accordion multi="false">
       <app-catalog></app-catalog>
     </mat-accordion>
   </div>
-  <div fxFlex="80%">
-    <mat-grid-list cols="4" rowHeight="100px">
+  <div fxFlex="85%">
+    <mat-grid-list cols="4" rowHeight="445px">
       <mat-grid-tile *ngFor="let tile of tiles" [colspan]="1" [rowspan]="1" style="background-color: aquamarine">
-        {{tile.name}}
-        <a mat-button [routerLink]="['/detail', tile.id]">{{tile.name}}</a>
+        <div class="mini_card__item_wrap">
+          <a mat-button [routerLink]="['/detail', tile.id]" class="mini_card__img">
+            <img
+              src="https://textile.shop/upload/resize_cache/iblock/d56/222_222_2/8fa9deb4_f51d_11e6_b944_00259077b6be_64d00445_f5c7_11e6_b944_00259077b6be.jpeg"
+              alt="Подушка декоративная Худжанд рельефная с фотопечатью Сова" title="">
+          </a>
+          <a mat-button [routerLink]="['/detail', tile.id]" class="mini_card__title">{{tile.name}}</a>
+          <div class="mini_card__price">
+            <span class="old_price">690 ₽</span>
+            <span class="new_price">490 ₽</span>
+          </div>
+          <div id="bx_1970176138_80255_dsc_perc" class="mini_card__sale">
+            <span class="sale_text">Скидка </span>
+            <span class="sale_per">-29%</span>
+          </div>
+          <div class="mini_card__text_wrap">
+            <div class="mini_card__text">
+              Декоративная подушка с фотопечатью не только придаст изюминку Вашему дому, но и может быть идеальным ...
+            </div>
+          </div>
+          <div class="mini_card__bot_block">
+            <a id="bx_1970176138_80255_buy_link" href="javascript:void(0)" rel="nofollow" data-pid="80255"
+               class="mini_card__buy_btn">
+              Купить </a>
+            <div class="mini_card__exist">Есть в наличии</div>
+          </div>
+        </div>
       </mat-grid-tile>
     </mat-grid-list>
   </div>
 </div>
 
-<div fxShow="true" fxHide.gt-sm="true">
-  <mat-grid-list cols="1" rowHeight="100px">
-    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="1" [rowspan]="1" style="background-color: aquamarine">
-      {{tile.name}}
-      <a mat-button [routerLink]="['/detail', tile.id]">{{tile.name}}</a>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div>
+<!--<div fxShow="true" fxHide.gt-sm="true">-->
+<!--<mat-grid-list cols="1" rowHeight="100px">-->
+<!--<mat-grid-tile *ngFor="let tile of tiles" [colspan]="1" [rowspan]="1" style="background-color: aquamarine">-->
+<!--{{tile.name}}-->
+<!--<a mat-button [routerLink]="['/detail', tile.id]">{{tile.name}}</a>-->
+<!--</mat-grid-tile>-->
+<!--</mat-grid-list>-->
+<!--</div>-->
 
 
