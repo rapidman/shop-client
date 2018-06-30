@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {CarService} from "../shared/car/car.service";
 import {NgForm} from "@angular/forms";
-import {GiphyService} from "../shared/giphy/giphy.service";
 import {Subscription} from "rxjs/Subscription";
 import {DetailService} from "../shared/service/detail/detail.service";
 
@@ -19,7 +17,6 @@ export class DetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private carService: CarService,
               private detailService: DetailService) {
   }
 
@@ -43,15 +40,15 @@ export class DetailComponent implements OnInit {
   }
 
   save(form: NgForm) {
-    this.carService.save(form).subscribe(result => {
-      this.gotoList();
-    }, error => console.error(error));
+    // this.carService.save(form).subscribe(result => {
+    //   this.gotoList();
+    // }, error => console.error(error));
   }
 
   remove(href) {
-    this.carService.remove(href).subscribe(result => {
-      this.gotoList();
-    }, error => console.error(error));
+    // this.carService.remove(href).subscribe(result => {
+    //   this.gotoList();
+    // }, error => console.error(error));
   }
 
 }
