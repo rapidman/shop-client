@@ -39,12 +39,20 @@
 
 .sidenav-container {
   position: absolute;
-  top: 60px;
+  top: 100px;
   bottom: 0;
   left: 0;
   right: 0;
 }
 
+.bread-scrumb {
+  position: absolute;
+  text-align: center;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
 .active{
   font-weight: bold;
@@ -55,4 +63,8 @@
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+.leftNavSide{
+  background-color:gainsboro;
 }

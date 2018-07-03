@@ -1,10 +1,5 @@
 <div class="container"  fxShow="true" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
-  <div fxFlex="20%">
-    <mat-accordion multi="false">
-      <app-catalog></app-catalog>
-    </mat-accordion>
-  </div>
-  <div fxFlex="80%">
+  <div fxFlex="100%">
     <mat-card>
       <form #detailForm="ngForm" (ngSubmit)="save(detailForm.value)">
         <mat-card-header>
