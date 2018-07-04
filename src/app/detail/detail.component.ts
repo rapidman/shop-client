@@ -21,8 +21,9 @@ export class DetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    alert('DetailComponent');
     this.sub = this.route.params.subscribe(params => {
-      const id = params['id'];
+      const id = params['productId'];
       if (id) {
         this.detailService.findGoodsById(id).subscribe(data => {
           this.detail = data;

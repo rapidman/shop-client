@@ -9,12 +9,12 @@
     <mat-grid-list cols="4" rowHeight="445px">
       <mat-grid-tile *ngFor="let tile of tiles" [colspan]="1" [rowspan]="1" style="background-color: aquamarine">
         <div class="mini_card__item_wrap">
-          <a mat-button [routerLink]="['/detail', tile.id]" class="mini_card__img">
+          <a mat-button [routerLink]="['detail', tile.id]" class="mini_card__img">
             <img
               src="https://textile.shop/upload/resize_cache/iblock/d56/222_222_2/8fa9deb4_f51d_11e6_b944_00259077b6be_64d00445_f5c7_11e6_b944_00259077b6be.jpeg"
               alt="Подушка декоративная Худжанд рельефная с фотопечатью Сова" title="">
           </a>
-          <a mat-button [routerLink]="['/detail', tile.id]" class="mini_card__title">{{tile.name}}</a>
+          <a mat-button [routerLink]="['detail', tile.id]" class="mini_card__title">{{tile.name}}</a>
           <div class="mini_card__price">
             <span class="old_price">690 ₽</span>
             <span class="new_price">490 ₽</span>
