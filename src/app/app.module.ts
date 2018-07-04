@@ -79,11 +79,11 @@ const appRoutes: Routes = [
     component: SearchResultComponent
   },
   {
-    path: 'category/:id',
+    path: 'category/:categoryId',
     component: CategoryComponent
   },
   {
-    path: 'detail/:id',
+    path: 'category/:categoryId/detail/:productId',
     component: DetailComponent
   }
 ];
