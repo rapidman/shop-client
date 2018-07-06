@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {DetailService} from "../shared/service/detail/detail.service";
 import {ActivatedRoute} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
+import {DetailService} from "../../shared/service/detail/detail.service";
 
 @Component({
   selector: 'app-category',
@@ -18,7 +18,7 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      const query = params['categoryId'];
+      const query = params['id'];
       if (query) {
         this.detailService.findGoodsByCategoryId(query).subscribe(data => {
           this.tiles = data['content'];

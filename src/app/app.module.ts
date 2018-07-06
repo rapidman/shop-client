@@ -49,15 +49,14 @@ import {AboutComponent} from './about/about.component';
 import {CatalogComponent} from './shared/catalog/catalog.component';
 import {SearchAutocompleteComponent} from './shared/search-autocomplete/search-autocomplete.component';
 import {SearchResultComponent} from './shared/search-result/search-result.component';
-import {DetailComponent} from './detail/detail.component';
 import {InfiniteCarouselComponent} from './shared/infinite-carousel/infinite-carousel.component';
 import {DetailService} from "./shared/service/detail/detail.service";
 import {CatalogService} from "./shared/service/catalog/catalog.service";
-import {CategoryComponent} from './category/category.component';
+import {ProductDashboardModule} from "./product-dashboard/product-dashboard.module";
 
 
 const appRoutes: Routes = [
-  {path: '', redirectTo: '/main', pathMatch: 'full'},
+  // {path: '', redirectTo: '/main', pathMatch: 'full'},
   {
     path: 'main',
     component: MainComponent, data: {state: 'home'}
@@ -79,13 +78,10 @@ const appRoutes: Routes = [
     component: SearchResultComponent
   },
   {
-    path: 'category/:categoryId',
-    component: CategoryComponent
+    path: '',
+    redirectTo: '/category',
+    pathMatch: 'full'
   },
-  {
-    path: 'category/:categoryId/detail/:productId',
-    component: DetailComponent
-  }
 ];
 
 export const routedComponents = [MainComponent, NewsComponent];
@@ -100,10 +96,8 @@ export const routedComponents = [MainComponent, NewsComponent];
     CatalogComponent,
     SearchAutocompleteComponent,
     SearchResultComponent,
-    DetailComponent,
     InfiniteCarouselComponent,
     routedComponents,
-    CategoryComponent
   ],
   imports: [
     FlexLayoutModule,
@@ -159,7 +153,8 @@ export const routedComponents = [MainComponent, NewsComponent];
     RouterModule.forRoot(appRoutes, {
       useHash: true
     }),
-    UICarouselModule
+    UICarouselModule,
+    ProductDashboardModule
   ],
   exports: [RouterModule],
   providers: [DetailService, CatalogService],

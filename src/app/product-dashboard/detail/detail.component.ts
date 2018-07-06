@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgForm} from "@angular/forms";
 import {Subscription} from "rxjs/Subscription";
-import {DetailService} from "../shared/service/detail/detail.service";
+import {DetailService} from "../../shared/service/detail/detail.service";
 
 @Component({
   selector: 'app-detail',
@@ -23,7 +23,7 @@ export class DetailComponent implements OnInit {
   ngOnInit() {
     alert('DetailComponent');
     this.sub = this.route.params.subscribe(params => {
-      const id = params['productId'];
+      const id = params['id'];
       if (id) {
         this.detailService.findGoodsById(id).subscribe(data => {
           this.detail = data;
