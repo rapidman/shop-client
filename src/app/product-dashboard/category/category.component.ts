@@ -12,7 +12,7 @@ export class CategoryComponent implements OnInit {
   sub: Subscription;
   tiles: any[];
 
-  constructor(private route: ActivatedRoute, private detailService: DetailService) {
+  constructor(public route: ActivatedRoute, private detailService: DetailService) {
     this.detailService = this.detailService;
   }
 
