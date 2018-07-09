@@ -32,7 +32,7 @@ export class BreadcrumbComponent implements OnInit {
   buildBreadCrumb(route: ActivatedRoute, url: string = '',
                   breadcrumbs: Array<BreadCrumb> = []): Array<BreadCrumb> {
     // If no routeConfig is avalailable we are on the root path
-    var label = route.routeConfig ? route.routeConfig.data['breadcrumb'] : '';
+    var label = route.routeConfig ? route.routeConfig.data['breadcrumb'] : 'Главная';
     const path = (route.routeConfig ? route.routeConfig.path : '').replace(':id', '');
     // In the routeConfig the complete path is not available,
     // so we rebuild it each time

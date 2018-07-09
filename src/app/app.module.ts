@@ -56,7 +56,7 @@ const appRoutes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
   {
     path: 'main',
-    component: MainComponent, data: {state: 'home', breadcrumb: 'Главная'}
+    component: MainComponent, data: {state: 'home', breadcrumb: ''}
   },
   {
     path: 'news',
