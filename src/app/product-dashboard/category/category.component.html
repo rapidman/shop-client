@@ -1,12 +1,12 @@
 <div class="container" fxShow="true" fxHide.lt-md="false" fxLayout="row" fxLayout.xs="column" fxLayoutWrap
-     fxLayoutGap="0%" fxLayoutAlign="center">
+     fxLayoutGap="0%" fxLayoutAlign="center" *ngIf="route.children.length === 0">
   <div fxFlex="15%">
     <mat-accordion multi="false">
       <app-catalog></app-catalog>
     </mat-accordion>
   </div>
   <div fxFlex="85%">
-    <mat-grid-list cols="4" rowHeight="445px" *ngIf="route.children.length === 0">
+    <mat-grid-list cols="4" rowHeight="445px">
       <mat-grid-tile *ngFor="let tile of tiles" [colspan]="1" [rowspan]="1" style="background-color: aquamarine">
         <div class="mini_card__item_wrap">
           <a mat-button [routerLink]="['./detail', tile.id]" class="mini_card__img">
@@ -37,11 +37,10 @@
         </div>
       </mat-grid-tile>
     </mat-grid-list>
-    <router-outlet></router-outlet>
   </div>
 </div>
 
-<div fxShow="true" fxHide.gt-sm="true">
+<div fxShow="true" fxHide.gt-sm="true" *ngIf="route.children.length === 0">
   <mat-grid-list cols="1" rowHeight="100px">
     <mat-grid-tile *ngFor="let tile of tiles" [colspan]="1" [rowspan]="1" style="background-color: aquamarine">
       {{tile.name}}
@@ -50,4 +49,4 @@
   </mat-grid-list>
 </div>
 
-
+<router-outlet></router-outlet>

@@ -38,6 +38,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {HttpClientModule} from "@angular/common/http";
 import {UICarouselModule} from "ui-carousel";
+import {BreadcrumbComponent} from "./breadcrumb/breadcrumb.component";
 
 const routes: Routes = [
   {
@@ -102,8 +103,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
   ],
-  exports: [ RouterModule, CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent ],
-  declarations: [CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent],
+  exports: [ RouterModule, CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent, BreadcrumbComponent ],
+  declarations: [CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent, BreadcrumbComponent],
   providers: [DetailService, CatalogService],
 })
 export class SharedModule {

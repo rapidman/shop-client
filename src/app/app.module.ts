@@ -51,28 +51,23 @@ import {ProductDashboardModule} from "./product-dashboard/product-dashboard.modu
 
 
 const appRoutes: Routes = [
-  // {path: '', redirectTo: '/main', pathMatch: 'full'},
+  {path: '', redirectTo: '/main', pathMatch: 'full'},
   {
     path: 'main',
-    component: MainComponent, data: {state: 'home'}
+    component: MainComponent, data: {state: 'home', breadcrumb: 'Главная'}
   },
   {
     path: 'news',
-    component: NewsComponent, data: {state: 'news'}
+    component: NewsComponent, data: {state: 'news', breadcrumb: 'Новости'}
   },
   {
     path: 'feedback',
-    component: FeedbackComponent
+    component: FeedbackComponent, data: {breadcrumb: 'Отзывы'}
   },
   {
     path: 'about',
-    component: AboutComponent
-  },
-  {
-    path: '',
-    redirectTo: '/category',
-    pathMatch: 'full'
-  },
+    component: AboutComponent, data: {breadcrumb: 'О компании'}
+  }
 ];
 
 export const routedComponents = [MainComponent, NewsComponent];
