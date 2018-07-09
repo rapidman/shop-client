@@ -30,8 +30,8 @@ export class DetailService {
     "&page=0&size=100");
   }
 
-  findGoodsByCategoryId(query: string): Observable<any> {
-    return this.http.get(this.GOODS_API + '?categoryId=' + query + "&page=0&size=100");
+  findGoodsByCategoryId(query: string, page: number, size: number): Observable<any> {
+    return this.http.get(this.GOODS_API + '?categoryId=' + query + "&page=" + page + "&size=" + size);
   }
 
   findGoodsById(id: string): Observable<any> {

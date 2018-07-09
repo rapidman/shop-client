@@ -12,9 +12,10 @@
             <img [routerLink]="['./detail', tile.id]" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
           <mat-card-content class="matCardContent">
             <p>
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
+              {{tile.name}}
+              <!--The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->
+              <!--A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->
+              <!--bred for hunting.-->
             </p>
           </mat-card-content>
           <mat-chip-list aria-orientation="horizontal" class="matChipList">
@@ -23,6 +24,11 @@
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
+    <mat-paginator [length]="length"
+                   [pageSize]="pageSize"
+                   [pageIndex]="pageIndex"
+                   (page)="pageEvent = getServerData($event)">
+    </mat-paginator>
   </div>
 </div>
 
@@ -33,6 +39,12 @@
       <a mat-button [routerLink]="['./detail', tile.id]">{{tile.name}}</a>
     </mat-grid-tile>
   </mat-grid-list>
+  <mat-paginator [length]="length"
+                 [pageSize]="pageSize"
+                 [pageIndex]="pageIndex"
+                 (page)="pageEvent = getServerData($event)">
+  </mat-paginator>
 </div>
+
 
 <router-outlet></router-outlet>

@@ -145,5 +145,8 @@ export const routedComponents = [MainComponent, NewsComponent];
 })
 
 export class AppModule {
+  public static LEFT_COL_WIDTH = '10%';
+  public static RIGHT_COL_WIDTH = '90%';
 }
+
 

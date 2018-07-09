@@ -21,7 +21,7 @@ export class SearchResultComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       const categoryId = params['query'];
       if (categoryId) {
-        this.detailService.findGoodsByCategoryId(categoryId).subscribe(data => {
+        this.detailService.findGoodsByCategoryId(categoryId, 0, 100).subscribe(data => {
           this.tiles = data['content'];
         });
       }
