@@ -8,7 +8,7 @@ import {SearchResultComponent} from "./search-result/search-result.component";
 import {InfiniteCarouselComponent} from "./infinite-carousel/infinite-carousel.component";
 import {SearchAutocompleteComponent} from "./search-autocomplete/search-autocomplete.component";
 import {
-  MatAutocompleteModule,
+  MatAutocompleteModule, MatBadgeModule,
   MatButtonModule,
   MatButtonToggleModule,
   MatCardModule,
@@ -100,6 +100,7 @@ const routes: Routes = [
     MatToolbarModule,
     MatTooltipModule,
     UICarouselModule,
+    MatBadgeModule,
     // MatTreeModule,
     CommonModule,
     RouterModule.forChild(routes),

@@ -37,6 +37,7 @@ import {
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
+  MatBadgeModule,
   MatTooltipModule
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -98,7 +99,7 @@ export const routedComponents = [MainComponent, NewsComponent];
     FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
-    // MatBadgeModule,
+    MatBadgeModule,
     // MatBottomSheetModule,
     MatButtonModule,
     MatButtonToggleModule,
