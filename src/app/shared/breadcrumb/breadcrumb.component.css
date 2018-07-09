@@ -4,15 +4,15 @@
 
 .breadcrumb li + li:before {
   content: " > ";
-  color: white;
+  color: darkgray;
 }
 
 .breadcrumb {
-  background-color: #8d0000;
-  padding: 20px;
+  background-color: white;
+  padding: 15px;
 }
 
 a {
-  color: lightgray;
+  color: darkgray;
 }
 

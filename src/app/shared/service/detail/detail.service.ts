@@ -17,8 +17,8 @@ export class DetailService {
     return this.http.get(this.CATEGORIES_API);
   }
 
-  get(id: string) {
-    return this.http.get(this.CATEGORIES_API + '/' + id);
+  getById(id: string): Observable<any> {
+    return this.http.get(this.GOODS_API + '/' + id);
   }
 
   getAutoComplete(query: string) {

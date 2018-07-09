@@ -39,6 +39,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {HttpClientModule} from "@angular/common/http";
 import {UICarouselModule} from "ui-carousel";
 import {BreadcrumbComponent} from "./breadcrumb/breadcrumb.component";
+import {BreadcrumbResolverService} from "./service/breadcrumb/breadcrumb-resolver.service";
 
 const routes: Routes = [
   {
@@ -105,7 +106,7 @@ const routes: Routes = [
   ],
   exports: [ RouterModule, CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent, BreadcrumbComponent ],
   declarations: [CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent, BreadcrumbComponent],
-  providers: [DetailService, CatalogService],
+  providers: [DetailService, CatalogService, BreadcrumbResolverService],
 })
 export class SharedModule {
 }

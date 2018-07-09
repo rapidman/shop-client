@@ -52,7 +52,9 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="leftNavSide">
-      <app-breadcrumb></app-breadcrumb>
+      <div>
+        <app-breadcrumb></app-breadcrumb>
+      </div>
       <main [@fadeAnimation]="getRouterOutletState(o)">
         <router-outlet #o="outlet"></router-outlet>
       </main>

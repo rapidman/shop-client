@@ -19,6 +19,10 @@ export class CatalogService {
       );
   }
 
+  getById(id: string): Observable<any> {
+    return this.http.get(this.CATEGORIES_API + '/' + id);
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
