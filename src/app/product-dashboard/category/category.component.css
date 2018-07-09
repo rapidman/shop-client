@@ -6,3 +6,27 @@ a.mini_card__title{
   overflow: hidden;
   display: block;
 }
+
+.example-card {
+  max-width: 400px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.matChipList{
+  float: right;
+  padding: 10px;
+}
+
+.matCardContent{
+  padding: 10px;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}
