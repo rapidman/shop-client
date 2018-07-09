@@ -45,15 +45,6 @@
   right: 0;
 }
 
-.bread-scrumb {
-  position: absolute;
-  text-align: center;
-  top: 70px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 .active{
   font-weight: bold;
 }
@@ -66,5 +57,5 @@
 }
 
 .leftNavSide{
-  background-color:gainsboro;
+  background-color:white;
 }

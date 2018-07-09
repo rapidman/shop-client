@@ -1,11 +1,11 @@
 <div class="container" fxShow="true" fxHide.lt-md="false" fxLayout="row" fxLayout.xs="column" fxLayoutWrap
      fxLayoutGap="0%" fxLayoutAlign="center" *ngIf="route.children.length === 0">
-  <div fxFlex="15%">
+  <div fxFlex="10%">
     <mat-accordion multi="false">
       <app-catalog></app-catalog>
     </mat-accordion>
   </div>
-  <div fxFlex="85%">
+  <div fxFlex="90%">
     <mat-grid-list cols="4" rowHeight="445px">
       <mat-grid-tile *ngFor="let tile of tiles" [colspan]="1" [rowspan]="1" style="background-color: aquamarine">
         <div class="mini_card__item_wrap">
