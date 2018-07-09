@@ -15,7 +15,6 @@ export class CategoryComponent implements OnInit {
   length = 0;
   pageSize = 5;
   pageIndex = 0;
-  // MatPaginator Output
   pageEvent: PageEvent;
   categoryId: string;
 
@@ -28,24 +27,23 @@ export class CategoryComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       this.categoryId = params['id'];
       if (this.categoryId) {
-        this.detailService.findGoodsByCategoryId(this.categoryId, this.pageIndex, this.pageSize).subscribe(data => {
-          this.tiles = data['content'];
-          this.pageIndex = data['number'];
-          this.pageSize = data['size'];
-          this.length = data['totalElements'];
-        });
+        this.loadData(this.pageIndex, this.pageSize);
       }
     });
   }
 
 
   getServerData($event: PageEvent) {
-    this.detailService.findGoodsByCategoryId(this.categoryId, $event.pageIndex, $event.pageSize).subscribe(data => {
+    this.loadData($event.pageIndex, $event.pageSize);
+    return event;
+  }
+
+  loadData(page: number, size: number) {
+    this.detailService.findGoodsByCategoryId(this.categoryId, page, size).subscribe(data => {
       this.tiles = data['content'];
       this.pageIndex = data['number'];
       this.pageSize = data['size'];
       this.length = data['totalElements'];
     });
-    return event;
   }
 }

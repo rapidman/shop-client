@@ -6,7 +6,7 @@
 
 .breadcrumb li + li:before {
   content: " > ";
-  color: darkgray;
+  color: dimgray;
 }
 
 .breadcrumb {
@@ -17,6 +17,6 @@
 }
 
 a {
-  color: darkgray;
+  color: dimgray;
 }
 
