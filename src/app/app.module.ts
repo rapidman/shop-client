@@ -47,6 +47,7 @@ import {NewsComponent} from './news/news.component';
 import {FeedbackComponent} from './feedback/feedback.component';
 import {AboutComponent} from './about/about.component';
 import {SharedModule} from "./shared/shared.module";
+import {ProductDashboardModule} from "./product-dashboard/product-dashboard.module";
 
 
 const appRoutes: Routes = [
@@ -141,7 +142,7 @@ export const routedComponents = [MainComponent, NewsComponent];
     }),
     UICarouselModule,
     SharedModule,
-    // ProductDashboardModule
+    ProductDashboardModule
   ],
   exports: [RouterModule],
   bootstrap: [AppComponent]

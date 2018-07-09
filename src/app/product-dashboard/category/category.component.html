@@ -2,7 +2,7 @@
      fxLayoutGap="0%" fxLayoutAlign="center">
   <div fxFlex="15%">
     <mat-accordion multi="false">
-      <!--<app-catalog></app-catalog>-->
+      <app-catalog></app-catalog>
     </mat-accordion>
   </div>
   <div fxFlex="85%">
@@ -40,13 +40,13 @@
   </div>
 </div>
 
-<!--<div fxShow="true" fxHide.gt-sm="true">-->
-<!--<mat-grid-list cols="1" rowHeight="100px">-->
-<!--<mat-grid-tile *ngFor="let tile of tiles" [colspan]="1" [rowspan]="1" style="background-color: aquamarine">-->
-<!--{{tile.name}}-->
-<!--<a mat-button [routerLink]="['/detail', tile.id]">{{tile.name}}</a>-->
-<!--</mat-grid-tile>-->
-<!--</mat-grid-list>-->
-<!--</div>-->
+<div fxShow="true" fxHide.gt-sm="true">
+  <mat-grid-list cols="1" rowHeight="100px">
+    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="1" [rowspan]="1" style="background-color: aquamarine">
+      {{tile.name}}
+      <a mat-button [routerLink]="['/detail', tile.id]">{{tile.name}}</a>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
 
 

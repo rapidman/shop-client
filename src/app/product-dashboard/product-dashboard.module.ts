@@ -135,7 +135,7 @@ const routes: Routes = [
     CommonModule,
     SharedModule
   ],
-  exports: [ RouterModule ],
+  exports: [ RouterModule, CategoryListComponent, CategoryComponent, DetailComponent ],
   declarations: [CategoryListComponent, CategoryComponent, DetailComponent]
 })
 export class ProductDashboardModule { }
