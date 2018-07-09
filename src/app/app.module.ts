@@ -46,13 +46,7 @@ import {MainComponent} from './main/main.component';
 import {NewsComponent} from './news/news.component';
 import {FeedbackComponent} from './feedback/feedback.component';
 import {AboutComponent} from './about/about.component';
-import {CatalogComponent} from './shared/catalog/catalog.component';
-import {SearchAutocompleteComponent} from './shared/search-autocomplete/search-autocomplete.component';
-import {SearchResultComponent} from './shared/search-result/search-result.component';
-import {InfiniteCarouselComponent} from './shared/infinite-carousel/infinite-carousel.component';
-import {DetailService} from "./shared/service/detail/detail.service";
-import {CatalogService} from "./shared/service/catalog/catalog.service";
-import {ProductDashboardModule} from "./product-dashboard/product-dashboard.module";
+import {SharedModule} from "./shared/shared.module";
 
 
 const appRoutes: Routes = [
@@ -74,10 +68,6 @@ const appRoutes: Routes = [
     component: AboutComponent
   },
   {
-    path: 'search-result/:query',
-    component: SearchResultComponent
-  },
-  {
     path: '',
     redirectTo: '/category',
     pathMatch: 'full'
@@ -93,11 +83,7 @@ export const routedComponents = [MainComponent, NewsComponent];
     NewsComponent,
     FeedbackComponent,
     AboutComponent,
-    CatalogComponent,
-    SearchAutocompleteComponent,
-    SearchResultComponent,
-    InfiniteCarouselComponent,
-    routedComponents,
+    routedComponents
   ],
   imports: [
     FlexLayoutModule,
@@ -154,10 +140,10 @@ export const routedComponents = [MainComponent, NewsComponent];
       useHash: true
     }),
     UICarouselModule,
-    ProductDashboardModule
+    SharedModule,
+    // ProductDashboardModule
   ],
   exports: [RouterModule],
-  providers: [DetailService, CatalogService],
   bootstrap: [AppComponent]
 })
 

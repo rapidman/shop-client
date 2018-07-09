@@ -1,32 +1,27 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {CategoryComponent} from "./category/category.component";
-import {DetailComponent} from "./detail/detail.component";
+import {CatalogComponent} from "./catalog/catalog.component";
+import {DetailService} from "./service/detail/detail.service";
+import {CatalogService} from "./service/catalog/catalog.service";
 import {RouterModule, Routes} from "@angular/router";
-import {CategoryListComponent} from "./category-list/category-list.component";
+import {SearchResultComponent} from "./search-result/search-result.component";
+import {InfiniteCarouselComponent} from "./infinite-carousel/infinite-carousel.component";
+import {SearchAutocompleteComponent} from "./search-autocomplete/search-autocomplete.component";
 import {
   MatAutocompleteModule,
   MatButtonModule,
   MatButtonToggleModule,
   MatCardModule,
   MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
+  MatChipsModule, MatDatepickerModule, MatDialogModule,
   MatDividerModule,
-  MatExpansionModule,
-  MatGridListModule,
+  MatExpansionModule, MatGridListModule,
   MatIconModule,
   MatInputModule,
-  MatListModule,
-  MatMenuModule,
+  MatListModule, MatMenuModule,
   MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
+  MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule,
+  MatRippleModule, MatSelectModule,
   MatSidenavModule,
   MatSliderModule,
   MatSlideToggleModule,
@@ -34,49 +29,20 @@ import {
   MatSortModule,
   MatStepperModule,
   MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
+  MatTabsModule, MatToolbarModule,
   MatTooltipModule
 } from "@angular/material";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
 import {BrowserModule} from "@angular/platform-browser";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
-import {SharedModule} from "../shared/shared.module";
-
+import {HttpClientModule} from "@angular/common/http";
+import {UICarouselModule} from "ui-carousel";
 
 const routes: Routes = [
   {
-    path: 'category',
-    data: {
-      breadcrumb: 'Category'
-    },
-    children: [
-      {
-        path: '',
-        component: CategoryListComponent,
-        data: {
-          breadcrumb: ''
-        }
-      },
-      {
-        path: ':id',
-        component: CategoryComponent,
-        data: {
-          breadcrumb: 'CatId'
-        },
-        children:[
-          {
-            path: 'detail/:id',
-            component: DetailComponent,
-            data: {
-              breadcrumb: 'ProdId'
-            }
-          },
-        ]
-      },
-    ]
+    path: 'search-result/:query',
+    component: SearchResultComponent
   },
 ];
 
@@ -131,11 +97,14 @@ const routes: Routes = [
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    RouterModule.forChild(routes),
+    UICarouselModule,
+    // MatTreeModule,
     CommonModule,
-    SharedModule
+    RouterModule.forChild(routes),
   ],
-  exports: [ RouterModule ],
-  declarations: [CategoryListComponent, CategoryComponent, DetailComponent]
+  exports: [ RouterModule, CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent ],
+  declarations: [CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent],
+  providers: [DetailService, CatalogService],
 })
-export class ProductDashboardModule { }
+export class SharedModule {
+}
