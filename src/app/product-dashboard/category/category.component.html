@@ -9,16 +9,18 @@
     <mat-grid-list cols="4" rowHeight="445px">
       <mat-grid-tile *ngFor="let tile of tiles" [colspan]="1" [rowspan]="1">
         <mat-card class="example-card">
-            <img [routerLink]="['./detail', tile.id]" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <img [routerLink]="['./detail', tile.id]" mat-card-image
+               src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="{{tile.name}}">
           <mat-card-content class="matCardContent">
             <p>
-              <a mat-button [routerLink]="['./detail', tile.id]" >{{tile.name}}</a>
+              <a mat-button [routerLink]="['./detail', tile.id]">{{tile.name  | slice:0:250}}...</a>
               <!--The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->
               <!--A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->
               <!--bred for hunting.-->
             </p>
           </mat-card-content>
           <mat-chip-list aria-orientation="horizontal" class="matChipList">
+            <mat-chip style="background-color: #2ecc71" color="green" selected>Есть в наличии</mat-chip>
             <mat-chip selected [color]="['primary']">Купить</mat-chip>
           </mat-chip-list>
         </mat-card>

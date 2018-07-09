@@ -38,7 +38,8 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatBadgeModule,
-  MatTooltipModule, MatPaginatorIntl
+  MatTooltipModule,
+  MatPaginatorIntl,
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RouterModule, Routes} from "@angular/router";
