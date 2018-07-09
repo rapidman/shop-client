@@ -38,7 +38,7 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatBadgeModule,
-  MatTooltipModule
+  MatTooltipModule, MatPaginatorIntl
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RouterModule, Routes} from "@angular/router";
@@ -49,6 +49,7 @@ import {FeedbackComponent} from './feedback/feedback.component';
 import {AboutComponent} from './about/about.component';
 import {SharedModule} from "./shared/shared.module";
 import {ProductDashboardModule} from "./product-dashboard/product-dashboard.module";
+import { getPaginatorIntl } from './paginator-intl';
 
 
 const appRoutes: Routes = [
@@ -141,12 +142,13 @@ export const routedComponents = [MainComponent, NewsComponent];
     ProductDashboardModule
   ],
   exports: [RouterModule],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    { provide: MatPaginatorIntl, useValue: getPaginatorIntl() }
+  ]
 })
 
 export class AppModule {
-  public static LEFT_COL_WIDTH = '10%';
-  public static RIGHT_COL_WIDTH = '90%';
 }
 
 
