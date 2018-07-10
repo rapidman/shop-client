@@ -20,5 +20,9 @@ export class BreadcrumbResolverService {
         breadcrumb.label = data.name;
       });
     }
+    if (label === 'Search') {
+      breadcrumb.label = 'Поиск';
+      breadcrumb.url = 'search-result';
+    }
   }
 }

@@ -44,7 +44,7 @@ import {BreadcrumbResolverService} from "./service/breadcrumb/breadcrumb-resolve
 const routes: Routes = [
   {
     path: 'search-result/:query',
-    component: SearchResultComponent
+    component: SearchResultComponent, data: {state: 'search-result', breadcrumb: 'Search'}
   },
 ];
 

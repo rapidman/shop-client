@@ -4,7 +4,6 @@ import {BreadCrumb} from "./breadcrumb";
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/filter';
-import {equal} from "assert";
 import {BreadcrumbResolverService} from "../service/breadcrumb/breadcrumb-resolver.service";
 
 @Component({
@@ -51,6 +50,9 @@ export class BreadcrumbComponent implements OnInit {
 
 
     var param = route.snapshot.params['id'];
+    if (!param) {
+      param = route.snapshot.params['query'];
+    }
     const breadcrumb = {
       label: label,
       url: nextUrl,
