@@ -2,13 +2,19 @@ import {Component, ViewChild} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Router} from "@angular/router";
 import {MatAutocompleteTrigger} from "@angular/material";
-import {Observable} from "rxjs/Observable";
-import {map, startWith} from "rxjs/operators";
 import {DetailService} from "../service/detail/detail.service";
+import {FormBuilder, FormGroup} from '@angular/forms';
 
-export class State {
-  constructor(public name: string, public population: string, public flag: string) {
-  }
+export class Group {
+  type: string;
+  options: Option[];
+}
+
+export class Option {
+  type: string;
+  name: string;
+  productId: number;
+  categoryId: number;
 }
 
 /**
@@ -21,35 +27,45 @@ export class State {
 })
 export class SearchAutocompleteComponent {
   stateCtrl: FormControl;
-  goods: any;
+  groupList: Group[];
   @ViewChild(MatAutocompleteTrigger) autocompleteTrigger: MatAutocompleteTrigger;
+  stateForm: FormGroup = this.fb.group({
+    stateGroup: '',
+  });
 
-  constructor(private router: Router, private detailService: DetailService) {
+  constructor(private router: Router,
+              private readonly detailService: DetailService,
+              private fb: FormBuilder) {
     this.router = router;
     this.detailService = this.detailService;
     this.stateCtrl = new FormControl();
     this.stateCtrl.valueChanges
-      .subscribe(name => {
-        if(name.length < 2){
+      .subscribe(query => {
+        if (query.length < 2) {
           return;
         }
-        this.detailService.getAutoComplete(name)
+        this.detailService.getAutoComplete(query)
           .subscribe(res => {
-            console.log(res);
-            return this.goods = res['content'];
+            // alert(res['content']);
+            return this.groupList = res['content'];
           })
       })
   }
 
-  selectCategory(category: any) {
-    this.router.navigate(['/search-result', category.option.value]);
+  selectOption(event: any) {
+    var option: Option = event.option.value;
+    if(option.type === 'CATEGORY'){
+      this.router.navigate(['/category', option.categoryId]);
+    }else{
+      this.router.navigate(['/category/' + option.categoryId + '/detail', option.productId]);
+    }
     this.resetItem();
   }
 
   resetItem() {
     if (this.stateCtrl) {
       this.stateCtrl.setValue('');
-      this.goods = null;
+      this.groupList = null;
     }
   }
 

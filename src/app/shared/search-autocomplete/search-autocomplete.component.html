@@ -1,15 +1,23 @@
-<form>
-  <div class="wildSrch">
-    <input matInput class="sq" placeholder="Поиск товаров и брендов" maxlength="300" aria-label="" [matAutocomplete]="auto"
-           [formControl]="stateCtrl">
-    <div class="resSrch" (click)="resetItem()" md-tooltip="some message" tooltip-position="below"></div>
-    <div class="find" (click)="search()"></div>
-  </div>
-  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectCategory($event)">
-    <mat-option *ngFor="let product of goods" [value]="product.id" >
-      <span>{{ product.name }}</span>
-    </mat-option>
-  </mat-autocomplete>
+<form [formGroup]="stateForm">
+  <mat-form-field>
+    <div class="wildSrch">
+      <input matInput class="sq" placeholder="Поиск товаров и категорий" maxlength="300" aria-label=""
+             formControlName="stateGroup" [matAutocomplete]="autoGroup"
+             [formControl]="stateCtrl">
+      <div class="resSrch" (click)="resetItem()" md-tooltip="some message" tooltip-position="below"></div>
+      <div class="find" (click)="search()"></div>
+    </div>
+    <mat-autocomplete #autoGroup="matAutocomplete" (optionSelected)="selectOption($event)">
+      <mat-optgroup *ngFor="let group of groupList" [label]="group.type">
+        <mat-option *ngFor="let option of group.options" [value]="option">
+          {{option.name}}
+        </mat-option>
+      </mat-optgroup>
+      <!--<mat-option *ngFor="let product of goods" [value]="product.id">-->
+        <!--<span>{{ product.name }}</span>-->
+      <!--</mat-option>-->
+    </mat-autocomplete>
+  </mat-form-field>
 </form>
 
 
