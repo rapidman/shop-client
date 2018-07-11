@@ -3,20 +3,20 @@
   line-height: 15px;
 }
 
-/*.sq {*/
-/*-moz-box-sizing: border-box;*/
-/*box-sizing: border-box;*/
-/*border: none;*/
-/*width: 100%;*/
-/*height: 30px;*/
-/*padding: 10px 30px 8px 15px;*/
-/*border-radius: 3px;*/
-/*font-size: 17px;*/
-/*line-height: 17px;*/
-/*background: rgba(255,255,255,.7);*/
-/*color: dimgray;*/
-/*transition: background ease .5s,color ease .5s;*/
-/*}*/
+.sq {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  width: 100%;
+  height: 30px;
+  padding: 10px 30px 8px 15px;
+  border-radius: 3px;
+  font-size: 17px;
+  line-height: 17px;
+  background: rgba(255, 255, 255, .7);
+  color: dimgray;
+  transition: background ease .5s, color ease .5s;
+}
 
 .wildSrch {
   width: 355px;

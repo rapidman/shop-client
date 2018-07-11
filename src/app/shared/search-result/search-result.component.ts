@@ -19,9 +19,9 @@ export class SearchResultComponent implements OnInit {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      const categoryId = params['query'];
-      if (categoryId) {
-        this.detailService.findGoodsByCategoryId(categoryId, 0, 100).subscribe(data => {
+      const query = params['query'];
+      if (query) {
+        this.detailService.findGoodsByCategoryId(query, 0, 100).subscribe(data => {
           this.tiles = data['content'];
         });
       }

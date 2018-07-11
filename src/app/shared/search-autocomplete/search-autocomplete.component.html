@@ -1,23 +1,16 @@
 <form [formGroup]="stateForm">
-  <mat-form-field>
     <div class="wildSrch">
       <input matInput class="sq" placeholder="Поиск товаров и категорий" maxlength="300" aria-label=""
              formControlName="stateGroup" [matAutocomplete]="autoGroup"
              [formControl]="stateCtrl">
-      <!--<div class="resSrch" (click)="resetItem()" md-tooltip="some message" tooltip-position="below"></div>-->
-      <!--<div class="find" (click)="search()"></div>-->
+      <div class="resSrch" (click)="resetItem()" md-tooltip="some message" tooltip-position="below"></div>
+      <div class="find" (click)="search()"></div>
     </div>
-    <mat-autocomplete [disableRipple]="true" #autoGroup="matAutocomplete" (optionSelected)="selectOption($event)">
-      <mat-optgroup *ngFor="let group of groupList" [label]="group.name" style="height: 30px;line-height: 15px;">
+    <mat-autocomplete #autoGroup="matAutocomplete" (optionSelected)="selectOption($event)">
+      <mat-optgroup *ngFor="let group of groupList" [label]="group.name">
         <mat-option *ngFor="let option of group.options" [value]="option">
           {{option.name}}
         </mat-option>
       </mat-optgroup>
     </mat-autocomplete>
-  </mat-form-field>
 </form>
-
-
-<!-- Copyright 2018 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license -->
