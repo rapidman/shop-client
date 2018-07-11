@@ -11,7 +11,7 @@
       <div class="cell">
         <div class="table innerTable" *ngFor="let group of tiles">
           <div class="row" *ngIf="group.options.length > 0 && group.type === 'CATEGORY'">
-            <div [class]="[group.type === 'CATEGORY' ? 'cell groupName' : 'cell']">{{group.name}}:</div>
+            <div class="cell groupName">{{group.name}}:</div>
             <div class="cell">
               <mat-grid-list cols="4" rowHeight="50px">
                 <mat-chip-list *ngIf="group.options.length > 0 && group.type === 'CATEGORY'">
@@ -19,6 +19,9 @@
                 </mat-chip-list>
               </mat-grid-list>
             </div>
+          </div>
+          <div class="row" *ngIf="group.options.length > 0 && group.type === 'PRODUCT'">
+            <div class="cell">{{group.name}}:</div>
           </div>
           <div class="row" *ngIf="group.options.length > 0 && group.type === 'PRODUCT'">
             <div class="cell">
@@ -29,15 +32,12 @@
                          src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="{{tile.name}}">
                     <mat-card-content class="matCardContent">
                       <p>
-                        <a mat-button [routerLink]="['/category' + tile.categoryId + '/detail', tile.productId]">{{tile.name | slice:0:250}}...</a>
-                        <!--The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->
-                        <!--A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->
-                        <!--bred for hunting.-->
+                        {{tile.description | slice:0:250}}...
                       </p>
                     </mat-card-content>
                     <mat-chip-list aria-orientation="horizontal" class="matChipList">
-                      <mat-chip style="background-color: #2ecc71" color="green" selected>Есть в наличии</mat-chip>
-                      <mat-chip color="accent" selected>Цена 1 490 ₽</mat-chip>
+                      <mat-chip *ngIf="tile.goodsCount > 0" style="background-color: #2ecc71" color="green" selected>Есть в наличии</mat-chip>
+                      <mat-chip color="accent" selected>Цена {{tile.price}} ₽</mat-chip>
                       <mat-chip selected [color]="['primary']">Купить</mat-chip>
                     </mat-chip-list>
                   </mat-card>
