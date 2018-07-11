@@ -13,7 +13,7 @@ export class CategoryComponent implements OnInit {
   sub: Subscription;
   tiles: any[];
   length = 0;
-  pageSize = 5;
+  pageSize = 8;
   pageIndex = 0;
   pageEvent: PageEvent;
   categoryId: string;
