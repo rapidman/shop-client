@@ -5,7 +5,7 @@ import {DetailComponent} from "./detail/detail.component";
 import {RouterModule, Routes} from "@angular/router";
 import {CategoryListComponent} from "./category-list/category-list.component";
 import {
-  MatAutocompleteModule,
+  MatAutocompleteModule, MatBadgeModule,
   MatButtonModule,
   MatButtonToggleModule,
   MatCardModule,
@@ -98,7 +98,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
-    // MatBadgeModule,
+    MatBadgeModule,
     // MatBottomSheetModule,
     MatButtonModule,
     MatButtonToggleModule,
