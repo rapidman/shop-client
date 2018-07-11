@@ -7,6 +7,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 
 export class Group {
   type: string;
+  name: string;
   options: Option[];
 }
 
@@ -47,16 +48,23 @@ export class SearchAutocompleteComponent {
         this.detailService.getAutoComplete(query)
           .subscribe(res => {
             // alert(res['content']);
-            return this.groupList = res['content'];
+            this.groupList = res['content'];
+            for (let group of this.groupList) {
+              if (group.type === 'CATEGORY') {
+                group.name = 'Категории';
+              } else {
+                group.name = 'Товары';
+              }
+            }
           })
       })
   }
 
   selectOption(event: any) {
     var option: Option = event.option.value;
-    if(option.type === 'CATEGORY'){
+    if (option.type === 'CATEGORY') {
       this.router.navigate(['/category', option.categoryId]);
-    }else{
+    } else {
       this.router.navigate(['/category/' + option.categoryId + '/detail', option.productId]);
     }
     this.resetItem();

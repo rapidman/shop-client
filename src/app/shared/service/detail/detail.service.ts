@@ -8,7 +8,7 @@ export class DetailService {
   public API = '//localhost:8080/api/v1';
   public GOODS_API = this.API + '/goods';
   public CATEGORIES_API = this.API + '/categories';
-  public SEARCH_CATEGORIES_API = this.API + '/categories/search';
+  public SEARCH_AUTOCOMPLETE_API = this.API + '/search/autocomplete';
 
   constructor(private http: HttpClient) {
   }
@@ -22,7 +22,7 @@ export class DetailService {
   }
 
   getAutoComplete(query: string) {
-    return this.http.get(this.SEARCH_CATEGORIES_API + '/?query=' + query + "&page=0&size=100");
+    return this.http.get(this.SEARCH_AUTOCOMPLETE_API + '/?query=' + query + "&page=0&size=100");
   }
 
   findGoodsByQuery(query: string): Observable<any> {
