@@ -45,7 +45,7 @@ export class SearchAutocompleteComponent {
         if (query.length < 2) {
           return;
         }
-        this.detailService.getAutoComplete(query)
+        this.detailService.getAutoComplete(query, 0, 100)
           .subscribe(res => {
             // alert(res['content']);
             this.groupList = res['content'];

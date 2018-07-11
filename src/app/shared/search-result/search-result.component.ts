@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
 import {DetailService} from "../service/detail/detail.service";
@@ -10,8 +10,8 @@ import {DetailService} from "../service/detail/detail.service";
 })
 export class SearchResultComponent implements OnInit {
   sub: Subscription;
-
   tiles: any[];
+  query: string;
 
   constructor(private route: ActivatedRoute, private detailService: DetailService) {
     this.detailService = this.detailService;
@@ -19,10 +19,18 @@ export class SearchResultComponent implements OnInit {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      const query = params['query'];
-      if (query) {
-        this.detailService.findGoodsByCategoryId(query, 0, 100).subscribe(data => {
+      this.query = params['query'];
+      if (this.query) {
+        this.detailService.getAutoComplete(this.query, 0, 100).subscribe(data => {
           this.tiles = data['content'];
+          console.log(this.tiles);
+          for (let group of this.tiles) {
+            if (group.type === 'CATEGORY') {
+              group.name = 'Категории';
+            } else {
+              group.name = 'Товары';
+            }
+          }
         });
       }
     });

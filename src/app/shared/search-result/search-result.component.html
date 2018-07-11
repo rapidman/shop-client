@@ -1,74 +1,52 @@
-<div class="container"  fxShow="true" fxHide.lt-md="true" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0%" fxLayoutAlign="center">
-  <div fxFlex="20%">
-    <mat-accordion multi="false">
-      <app-catalog></app-catalog>
-    </mat-accordion>
-  </div>
-  <div fxFlex="80%">
-    <mat-grid-list cols="4" rowHeight="100px">
-      <mat-grid-tile *ngFor="let tile of tiles" [colspan]="1" [rowspan]="1" style="background-color: aquamarine">
-        <div class="mini_card__item_wrap">
-          <a mat-button [routerLink]="['/detail', tile.id]" class="mini_card__img">
-            <img src="https://textile.shop/upload/resize_cache/iblock/d56/222_222_2/8fa9deb4_f51d_11e6_b944_00259077b6be_64d00445_f5c7_11e6_b944_00259077b6be.jpeg" alt="Подушка декоративная Худжанд рельефная с фотопечатью Сова" title="">
-          </a>
-          <a mat-button [routerLink]="['/detail', tile.id]" class="mini_card__title">{{tile.name}}</a>
-          <div class="mini_card__price" id="bx_1970176138_80255_price">
-            <span class="old_price">690 ₽</span> <span class="new_price">
-                                                        490 ₽                            </span>                    </div>
-          <div id="bx_1970176138_80255_dsc_perc" class="mini_card__sale">
-            <span class="sale_text">Скидка </span>
-            <span class="sale_per">-29                                %</span>
-          </div>
-          <div class="mini_card__text_wrap">
-            <div class="mini_card__text">
-              Декоративная подушка с фотопечатью не только придаст изюминку Вашему дому, но и может быть идеальным ...
+<div class="container" fxShow="true" fxHide.lt-md="false" fxLayout="row" fxLayout.xs="column" fxLayoutWrap
+     fxLayoutGap="0%" fxLayoutAlign="center">
+  <div class="table outerTable" fxFlex="100%">
+    <div class="row">
+      <div class="cell searchHeader">Результаты поиска: <span class="queryTxt">{{query}}</span></div>
+    </div>
+    <div class="row">
+      <mat-divider [inset]="false"></mat-divider>
+    </div>
+    <div class="row">
+      <div class="cell">
+        <div class="table innerTable" *ngFor="let group of tiles">
+          <div class="row">
+            <div [class]="[group.type === 'CATEGORY' ? 'cell groupName' : 'cell']">{{group.name}}:</div>
+            <div class="cell">
+              <mat-grid-list cols="4" rowHeight="50px" *ngIf="group.options.length > 0 && group.type === 'CATEGORY'">
+                <mat-chip-list *ngIf="group.options.length > 0 && group.type === 'CATEGORY'">
+                  <mat-chip [routerLink]="['/category', tile.categoryId]" *ngFor="let tile of group.options">{{tile.name}}</mat-chip>
+                </mat-chip-list>
+              </mat-grid-list>
             </div>
           </div>
-          <div class="mini_card__bot_block" id="bx_1970176138_80255_basket_actions">
-            <a id="bx_1970176138_80255_buy_link" href="javascript:void(0)" rel="nofollow" data-pid="80255" class="mini_card__buy_btn">
-              Купить                            </a>
-            <div class="mini_card__exist">Есть в наличии</div>
-            <div class="bx_catalog_item_controls_blocktwo">
-              <a id="bx_1970176138_80255_compare_link" class="bx_bt_button_type_2 bx_medium" href="javascript:void(0)"></a>
+          <div class="row">
+            <div class="cell">
+              <mat-grid-list cols="4" rowHeight="445px" *ngIf="group.options.length > 0 && group.type === 'PRODUCT'">
+                <mat-grid-tile *ngFor="let tile of group.options" [colspan]="1" [rowspan]="1">
+                  <mat-card class="example-card">
+                    <img [routerLink]="['/category' + tile.categoryId + '/detail', tile.productId]" mat-card-image
+                         src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="{{tile.name}}">
+                    <mat-card-content class="matCardContent">
+                      <p>
+                        <a mat-button [routerLink]="['/category' + tile.categoryId + '/detail', tile.productId]">{{tile.name | slice:0:250}}...</a>
+                        <!--The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->
+                        <!--A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->
+                        <!--bred for hunting.-->
+                      </p>
+                    </mat-card-content>
+                    <mat-chip-list aria-orientation="horizontal" class="matChipList">
+                      <mat-chip style="background-color: #2ecc71" color="green" selected>Есть в наличии</mat-chip>
+                      <mat-chip color="accent" selected>Цена 1 490 ₽</mat-chip>
+                      <mat-chip selected [color]="['primary']">Купить</mat-chip>
+                    </mat-chip-list>
+                  </mat-card>
+                </mat-grid-tile>
+              </mat-grid-list>
             </div>
-          </div>
-        </div>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </div>
-</div>
-
-<div fxShow="true" fxHide.gt-sm="true">
-  <mat-grid-list cols="1" rowHeight="100px">
-    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="1" [rowspan]="1" style="background-color: aquamarine">
-      <div class="mini_card__item_wrap">
-        <a mat-button [routerLink]="['/detail', tile.id]" class="mini_card__img">
-          <img src="https://textile.shop/upload/resize_cache/iblock/d56/222_222_2/8fa9deb4_f51d_11e6_b944_00259077b6be_64d00445_f5c7_11e6_b944_00259077b6be.jpeg" alt="Подушка декоративная Худжанд рельефная с фотопечатью Сова" title="">
-        </a>
-        <a mat-button [routerLink]="['/detail', tile.id]" class="mini_card__title">{{tile.name}}</a>
-        <div class="mini_card__price" id="bx_1970176138_80255_price">
-          <span class="old_price">690 ₽</span> <span class="new_price">
-                                                        490 ₽                            </span>                    </div>
-        <div id="bx_1970176138_80255_dsc_perc" class="mini_card__sale">
-          <span class="sale_text">Скидка </span>
-          <span class="sale_per">-29                                %</span>
-        </div>
-        <div class="mini_card__text_wrap">
-          <div class="mini_card__text">
-            Декоративная подушка с фотопечатью не только придаст изюминку Вашему дому, но и может быть идеальным ...
-          </div>
-        </div>
-        <div class="mini_card__bot_block" id="bx_1970176138_80255_basket_actions">
-          <a id="bx_1970176138_80255_buy_link" href="javascript:void(0)" rel="nofollow" data-pid="80255" class="mini_card__buy_btn">
-            Купить                            </a>
-          <div class="mini_card__exist">Есть в наличии</div>
-          <div class="bx_catalog_item_controls_blocktwo">
-            <a id="bx_1970176138_80255_compare_link" class="bx_bt_button_type_2 bx_medium" href="javascript:void(0)"></a>
           </div>
         </div>
       </div>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </div>
+  </div>
 </div>
-
-

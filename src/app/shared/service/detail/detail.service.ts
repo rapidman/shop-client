@@ -21,8 +21,8 @@ export class DetailService {
     return this.http.get(this.GOODS_API + '/' + id);
   }
 
-  getAutoComplete(query: string) {
-    return this.http.get(this.SEARCH_AUTOCOMPLETE_API + '/?query=' + query + "&page=0&size=100");
+  getAutoComplete(query: string, page: number, size: number) {
+    return this.http.get(this.SEARCH_AUTOCOMPLETE_API + '/?query=' + query + "&page=" + page + "&size=" + size);
   }
 
   findGoodsByQuery(query: string): Observable<any> {
