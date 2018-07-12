@@ -40,6 +40,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {UICarouselModule} from "ui-carousel";
 import {BreadcrumbComponent} from "./breadcrumb/breadcrumb.component";
 import {BreadcrumbResolverService} from "./service/breadcrumb/breadcrumb-resolver.service";
+import { ProductCardComponent } from './product-card/product-card.component';
 
 const routes: Routes = [
   {
@@ -105,8 +106,9 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
   ],
-  exports: [ RouterModule, CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent, BreadcrumbComponent ],
-  declarations: [CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent, BreadcrumbComponent],
+  exports: [ RouterModule, CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent,
+    BreadcrumbComponent, ProductCardComponent ],
+  declarations: [CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent, BreadcrumbComponent, ProductCardComponent],
   providers: [DetailService, CatalogService, BreadcrumbResolverService],
 })
 export class SharedModule {

@@ -8,23 +8,7 @@
   <div fxFlex="90%">
     <mat-grid-list cols="4" rowHeight="445px">
       <mat-grid-tile *ngFor="let tile of tiles" [colspan]="1" [rowspan]="1">
-        <mat-card class="example-card">
-          <img [routerLink]="['./detail', tile.productId]" mat-card-image [matBadge]="tile.goodsCount"
-               src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="{{tile.name}}">
-          <mat-card-content class="matCardContent">
-            <p>
-              {{tile.description | slice:0:250}}...
-            </p>
-          </mat-card-content>
-          <mat-chip-list aria-orientation="horizontal" class="matChipList" >
-            <mat-chip *ngIf="tile.goodsCount > 0" style="background-color: #2ecc71" color="green" selected
-                      matTooltip="Имеется в наличии" matTooltipPosition="above">
-              {{tile.goodsCount}}
-            </mat-chip>
-            <mat-chip color="accent" selected>Цена {{(tile.price / 100) | number:'3.2-5'}} ₽</mat-chip>
-            <mat-chip selected [color]="['primary']">Купить</mat-chip>
-          </mat-chip-list>
-        </mat-card>
+        <app-product-card [product]="tile"></app-product-card>
       </mat-grid-tile>
     </mat-grid-list>
     <mat-paginator [length]="length"
