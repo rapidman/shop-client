@@ -2,7 +2,7 @@
     <div class="wildSrch">
       <input matInput class="sq" placeholder="Поиск товаров и категорий" maxlength="300" aria-label=""
              formControlName="stateGroup" [matAutocomplete]="autoGroup"
-             [formControl]="stateCtrl">
+             [formControl]="stateCtrl" (keyup.enter)="search()">
       <div class="resSrch" (click)="resetItem()" md-tooltip="some message" tooltip-position="below"></div>
       <div class="find" (click)="search()"></div>
     </div>

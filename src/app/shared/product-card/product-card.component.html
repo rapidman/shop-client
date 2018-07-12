@@ -6,12 +6,18 @@
       {{product.description | slice:0:250}}...
     </p>
   </mat-card-content>
-  <mat-chip-list aria-orientation="horizontal" class="matChipList">
-    <mat-chip *ngIf="product.goodsCount > 0" style="background-color: #2ecc71" color="green" selected
+  <mat-chip-list aria-orientation="horizontal" class="matChipList" *ngIf="product.goodsCount > 0">
+    <span class="mat-chip">Имеется в наличии:</span>
+    <mat-chip  style="background-color: #2ecc71" color="green" selected
               matTooltip="Имеется в наличии" matTooltipPosition="above">
       {{product.goodsCount}}
     </mat-chip>
+  </mat-chip-list>
+  <mat-chip-list aria-orientation="horizontal" class="matChipList">
     <mat-chip color="accent" selected>Цена {{(product.price / 100) | number:'3.2-5'}} ₽</mat-chip>
-    <mat-chip selected [color]="['primary']">Купить</mat-chip>
+    <mat-chip selected [color]="['primary']" (click)="addToBasket()">
+      <span *ngIf="!inBasket">Купить</span>
+      <span *ngIf="inBasket">В корзине</span>
+    </mat-chip>
   </mat-chip-list>
 </mat-card>

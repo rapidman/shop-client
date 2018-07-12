@@ -78,9 +78,9 @@ export class SearchAutocompleteComponent {
   }
 
   search() {
-    // this.closeAutocomplete();
     if (this.stateCtrl.value) {
       this.router.navigate(['/search-result', this.stateCtrl.value]);
+      this.closeAutocomplete();
     }
   }
 

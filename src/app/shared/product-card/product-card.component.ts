@@ -7,10 +7,16 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ProductCardComponent implements OnInit {
   @Input() product: any;
+  inBasket: boolean;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
   }
 
+  ngOnInit() {
+    this.inBasket = false;
+  }
+
+  addToBasket() {
+    this.inBasket = true;
+  }
 }
