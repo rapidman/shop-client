@@ -22,6 +22,6 @@ export class ProductCardComponent implements OnInit {
   }
 
   inBasket(): boolean {
-    return this.basketService.getCount() > 0;
+    return this.basketService.getCount(this.product.productId) > 0;
   }
 }

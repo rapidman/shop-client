@@ -22,6 +22,6 @@ export class AppComponent {
   }
 
   getBasketProductCount(): number {
-    return this.basketService.getCount();
+    return this.basketService.getTotalOrderCount();
   }
 }
