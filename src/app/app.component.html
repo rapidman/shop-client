@@ -12,6 +12,9 @@
             [matBadge]="getBasketProductCount()" matBadgePosition="before" matBadgeColor="accent">
       Корзина
     </button>
+    <button mat-raised-button color="primary" *ngIf="getBasketProductCount() == 0">
+      Корзина
+    </button>
 
     <span class="example-spacer"></span>
 

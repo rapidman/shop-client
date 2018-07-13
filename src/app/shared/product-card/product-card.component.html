@@ -15,9 +15,11 @@
   </mat-chip-list>
   <mat-chip-list aria-orientation="horizontal" class="matChipList">
     <mat-chip color="accent" selected>Цена {{(product.price / 100) | number:'3.2-5'}} ₽</mat-chip>
-    <mat-chip selected [color]="['primary']" (click)="addToBasket()">
-      <span *ngIf="!inBasket()">Купить</span>
-      <span *ngIf="inBasket()">В корзине</span>
+    <mat-chip selected [color]="['primary']" (click)="addToBasket()" *ngIf="!inBasket()">
+      Купить
+    </mat-chip>
+    <mat-chip selected  (click)="addToBasket()" *ngIf="inBasket()" style="background-color: #16a085">
+      В корзине
     </mat-chip>
   </mat-chip-list>
 </mat-card>
