@@ -41,6 +41,7 @@ import {UICarouselModule} from "ui-carousel";
 import {BreadcrumbComponent} from "./breadcrumb/breadcrumb.component";
 import {BreadcrumbResolverService} from "./service/breadcrumb/breadcrumb-resolver.service";
 import { ProductCardComponent } from './product-card/product-card.component';
+import { BasketDialogComponent } from './basket-dialog/basket-dialog.component';
 
 const routes: Routes = [
   {
@@ -108,8 +109,10 @@ const routes: Routes = [
   ],
   exports: [ RouterModule, CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent,
     BreadcrumbComponent, ProductCardComponent ],
-  declarations: [CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent, BreadcrumbComponent, ProductCardComponent],
+  declarations: [CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent,
+    BreadcrumbComponent, ProductCardComponent, BasketDialogComponent],
   providers: [DetailService, CatalogService, BreadcrumbResolverService],
+  entryComponents: [BasketDialogComponent]
 })
 export class SharedModule {
 }

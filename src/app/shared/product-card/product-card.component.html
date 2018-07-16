@@ -18,8 +18,9 @@
     <mat-chip selected [color]="['primary']" (click)="addToBasket()" *ngIf="!inBasket()">
       Купить
     </mat-chip>
-    <mat-chip selected  (click)="addToBasket()" *ngIf="inBasket()" style="background-color: #16a085">
+    <mat-chip selected  (click)="openBasket()" *ngIf="inBasket()" style="background-color: #16a085">
       В корзине
     </mat-chip>
   </mat-chip-list>
+  <!--<app-basket-dialog></app-basket-dialog>-->
 </mat-card>
