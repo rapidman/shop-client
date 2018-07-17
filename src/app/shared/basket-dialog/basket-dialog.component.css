@@ -1,0 +1,28 @@
+.basket-img {
+  max-width: 100px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.table {
+  display: table;
+  width: 99%;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+}
+
+.mat-dialog-title {
+  margin: 0;
+}
+
+.matCardContent {
+  width: 250px;
+  text-align: left;
+  vertical-align: top;
+}

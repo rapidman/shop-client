@@ -8,7 +8,10 @@ export interface Basket {
 
 export interface Order {
   productId: number;
-  count: number
+  categoryId: number;
+  count: number;
+  goodsName: string;
+  goodsDescription: string;
 }
 
 
@@ -57,4 +60,15 @@ export class BasketService {
     return 0;
   }
 
+  getOrders(): Order[] {
+    return this.basket.orders;
+  }
+
+  delete(productId: number) {
+    this.http.delete(this.BASKET_API + '/' + productId,
+      {withCredentials: true})
+      .subscribe(data => {
+        this.refreshBasket();
+      });
+  }
 }
