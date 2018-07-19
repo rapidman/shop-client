@@ -12,6 +12,7 @@ export interface Order {
   count: number;
   goodsName: string;
   goodsDescription: string;
+  price: number;
 }
 
 

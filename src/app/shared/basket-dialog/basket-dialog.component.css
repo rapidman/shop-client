@@ -1,5 +1,5 @@
-.basket-img {
-  max-width: 100px;
+.basketImg {
+  width: 100px;
   padding: 0px;
   margin: 0px;
 }
@@ -15,6 +15,8 @@
 
 .cell {
   display: table-cell;
+  vertical-align: top;
+  padding: 5px;
 }
 
 .mat-dialog-title {
@@ -22,7 +24,27 @@
 }
 
 .matCardContent {
-  width: 250px;
+  width: 450px;
   text-align: left;
   vertical-align: top;
+}
+
+font.errortext {
+  color: red;
+}
+
+.errortext {
+  color: #D8000C;
+  background-color: #FFD2D2;
+  display: inline-block;
+  padding: 10px 5px 10px 5px !important;
+  width: 100%;
+  font-size: 15px;
+}
+
+.formField{
+  font-size: 15px;
+  color: dimgray;
+  border: none;
+  width: 50px;
 }
