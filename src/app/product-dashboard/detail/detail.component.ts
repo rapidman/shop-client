@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgForm} from "@angular/forms";
 import {Subscription} from "rxjs/Subscription";
-import {DetailService} from "../../shared/service/detail/detail.service";
+import {DetailService, Product} from "../../shared/service/detail/detail.service";
+import {BasketService} from "../../shared/service/basket/basket.service";
+import {BasketDialogComponent} from "../../shared/basket-dialog/basket-dialog.component";
+import {MatDialog} from "@angular/material";
 
 @Component({
   selector: 'app-detail',
@@ -11,13 +14,15 @@ import {DetailService} from "../../shared/service/detail/detail.service";
 })
 export class DetailComponent implements OnInit {
 
-  detail: any = {};
+  detail: Product;
 
   sub: Subscription;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private detailService: DetailService) {
+              private detailService: DetailService,
+              private basketService: BasketService,
+              public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -40,16 +45,22 @@ export class DetailComponent implements OnInit {
     this.router.navigate(['/car-list']);
   }
 
-  save(form: NgForm) {
-    // this.carService.save(form).subscribe(result => {
-    //   this.gotoList();
-    // }, error => console.error(error));
+  addToBasket() {
+    this.basketService.addToBasket(this.detail.id);
   }
 
-  remove(href) {
-    // this.carService.remove(href).subscribe(result => {
-    //   this.gotoList();
-    // }, error => console.error(error));
+
+  inBasket(): boolean {
+    return this.basketService.getCount(this.detail.id) > 0;
   }
 
+  openBasket(): void {
+    const dialogRef = this.dialog.open(BasketDialogComponent, {
+      width: '700px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 }
