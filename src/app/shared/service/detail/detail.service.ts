@@ -2,11 +2,12 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 
-export interface Product{
+export interface Product {
   id: number;
   name: string,
   description: string,
-  present: boolean
+  present: boolean,
+  rate: number
 }
 
 @Injectable()
@@ -38,6 +39,10 @@ export class DetailService {
 
   findGoodsById(id: string): Observable<Product> {
     return this.http.get<Product>(this.GOODS_API + '/' + id);
+  }
+
+  addRate(id: string) {
+    this.http.post(this.GOODS_API + '/rate/' + id, null).subscribe();
   }
 
 }

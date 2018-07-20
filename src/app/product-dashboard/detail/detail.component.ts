@@ -32,6 +32,7 @@ export class DetailComponent implements OnInit {
       if (id) {
         this.detailService.findGoodsById(id).subscribe(data => {
           this.detail = data;
+          this.detailService.addRate(id);
         });
       }
     });
@@ -62,5 +63,21 @@ export class DetailComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+
+  createStarRange(){
+    var items: number[] = [];
+    for(var i = 1; i <= this.detail.rate; i++){
+      items.push(i);
+    }
+    return items;
+  }
+
+  createGreyStarRange(){
+    var items: number[] = [];
+    for(var i = 1; i <= 5 - this.detail.rate; i++){
+      items.push(i);
+    }
+    return items;
   }
 }

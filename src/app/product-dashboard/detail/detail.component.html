@@ -19,10 +19,14 @@
       <mat-card-header>
         <span>Рейтинг товара:</span>
         <ol class="starWrapper">
-          <li ng-repeat="Star in [1,2,3,4,5]">
-            <div ng-switch="1 >= Star">
+          <li *ngFor="let star of createStarRange()">
+            <div>
                 <img ng-switch-when="true" src="assets/star.jpeg" class="star"/>
-                <img ng-switch-when="true" src="assets/star.jpeg" class="star"/>
+            </div>
+          </li>
+          <li *ngFor="let star of createGreyStarRange()">
+            <div>
+                <img ng-switch-when="true" src="assets/star-grey.jpeg" class="star"/>
             </div>
           </li>
         </ol>
