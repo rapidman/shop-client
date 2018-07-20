@@ -27,6 +27,22 @@
     </mat-error>
     <mat-icon matSuffix>mode_edit</mat-icon>
   </mat-form-field>
+  <mat-form-field class="full-width">
+    <input [formControl]="nameFormControl" matInput placeholder="Имя *" (keyup)="onNameKey($event)">
+    <mat-hint>Введите свое имя</mat-hint>
+    <mat-error *ngIf="phoneFormControl.hasError('required')">
+      Имя <strong>обязательно</strong>
+    </mat-error>
+    <mat-icon matSuffix>mode_edit</mat-icon>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input [formControl]="lastNameFormControl" matInput placeholder="Фамилия *" (keyup)="onLastNameKey($event)">
+    <mat-hint>Введите свою фамилию</mat-hint>
+    <mat-error *ngIf="lastNameFormControl.hasError('required')">
+      Фамилия <strong>обязательна</strong>
+    </mat-error>
+    <mat-icon matSuffix>mode_edit</mat-icon>
+  </mat-form-field>
   <mat-card-actions>
     <button mat-button mat-raised-button color="primary" (click)="send()">Отправить</button>
   </mat-card-actions>

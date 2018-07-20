@@ -24,9 +24,17 @@ export class OrderComponent implements OnInit {
     Validators.required,
     Validators.pattern('\\+\\d{10,15}'),
   ]);
+  nameFormControl = new FormControl('', [
+    Validators.required
+  ]);
+  lastNameFormControl = new FormControl('', [
+    Validators.required
+  ]);
   matcher = new MyErrorStateMatcher();
   email: string;
   phone: string;
+  name: string;
+  lastName: string;
 
   constructor() {
   }
@@ -49,5 +57,13 @@ export class OrderComponent implements OnInit {
 
   onPhoneKey($event: any) {
     this.phone = $event.target.value;
+  }
+
+  onNameKey($event: any) {
+    this.name = $event.target.value;
+  }
+
+  onLastNameKey($event: any) {
+    this.lastName = $event.target.value;
   }
 }
