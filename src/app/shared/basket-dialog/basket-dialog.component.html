@@ -50,6 +50,13 @@
     </div>
   </div>
   <div class="row" *ngIf="getOrders().length > 0">
+    <div class="cell" align="right">
+      <mat-divider style="padding-top: 10px"></mat-divider>
+      Итого: <span>{{getTotalPrice() / 100 | number:'3.2-5'}} ₽</span>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="getOrders().length > 0">
     <div class="cell" align="center">
         <mat-divider style="padding-top: 10px"></mat-divider>
         <button mat-button mat-raised-button color="primary"  [mat-dialog-close]="true" [routerLink]="['/order']">Оформить заказ</button>

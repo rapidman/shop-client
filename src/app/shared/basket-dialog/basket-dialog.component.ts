@@ -13,6 +13,7 @@ export interface DialogData {
   styleUrls: ['./basket-dialog.component.css']
 })
 export class BasketDialogComponent implements OnInit {
+  private totalPrice: number;
 
   constructor(
     public dialogRef: MatDialogRef<BasketDialogComponent>,
@@ -33,5 +34,13 @@ export class BasketDialogComponent implements OnInit {
 
   deleteProdict(item: Order) {
     this.basketService.delete(item.productId);
+  }
+
+  getTotalPrice() {
+    this.totalPrice = 0;
+    for (const order of this.getOrders()) {
+      this.totalPrice += order.price;
+    }
+    return this.totalPrice;
   }
 }

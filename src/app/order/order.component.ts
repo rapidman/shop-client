@@ -20,8 +20,13 @@ export class OrderComponent implements OnInit {
     Validators.required,
     Validators.email,
   ]);
+  phoneFormControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern('\\+\\d{10,15}'),
+  ]);
   matcher = new MyErrorStateMatcher();
   email: string;
+  phone: string;
 
   constructor() {
   }
@@ -35,10 +40,14 @@ export class OrderComponent implements OnInit {
   }
 
   send(){
-    alert(this.email);
+    alert(this.email + this.phone);
   }
 
   onEmailKey($event: any) {
     this.email = $event.target.value;
+  }
+
+  onPhoneKey($event: any) {
+    this.phone = $event.target.value;
   }
 }
