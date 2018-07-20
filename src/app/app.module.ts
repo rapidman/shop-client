@@ -51,6 +51,7 @@ import {AboutComponent} from './about/about.component';
 import {SharedModule} from "./shared/shared.module";
 import {ProductDashboardModule} from "./product-dashboard/product-dashboard.module";
 import { getPaginatorIntl } from './paginator-intl';
+import { OrderComponent } from './order/order.component';
 
 
 const appRoutes: Routes = [
@@ -70,6 +71,10 @@ const appRoutes: Routes = [
   {
     path: 'about',
     component: AboutComponent, data: {breadcrumb: 'О компании'}
+  },
+  {
+    path: 'order',
+    component: OrderComponent, data: {breadcrumb: 'Оформление заказа'}
   }
 ];
 
@@ -82,6 +87,7 @@ export const routedComponents = [MainComponent, NewsComponent];
     NewsComponent,
     FeedbackComponent,
     AboutComponent,
+    OrderComponent,
     routedComponents
   ],
   imports: [

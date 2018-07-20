@@ -18,13 +18,11 @@ export class ProductCardComponent implements OnInit {
 
   openBasket(): void {
     const dialogRef = this.dialog.open(BasketDialogComponent, {
-      width: '700px',
-      data: {name: '', animal: ''}
+      width: '700px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      // this.animal = result;
     });
   }
 

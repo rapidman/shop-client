@@ -1,0 +1,16 @@
+<mat-card>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Е-мэйл *" [formControl]="emailFormControl" (keyup)="onEmailKey($event)"
+             [errorStateMatcher]="matcher" [value]="email">
+      <mat-hint>Укажите свой е-мэйл адрес</mat-hint>
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Введите пожалуйста корректный е-мэйл адрес
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Е-мэйл адрес <strong>обязателен</strong>
+      </mat-error>
+    </mat-form-field>
+    <button mat-button mat-raised-button color="primary" (click)="send()">Отправить</button>
+  </form>
+</mat-card>

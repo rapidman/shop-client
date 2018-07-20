@@ -8,11 +8,8 @@
 
     <span class="example-spacer"></span>
     <div class="basket"></div>
-    <button mat-raised-button color="primary" *ngIf="getBasketProductCount() > 0"
+    <button mat-raised-button color="primary" (click)="openBasket()"
             [matBadge]="getBasketProductCount()" matBadgePosition="before" matBadgeColor="accent">
-      Корзина
-    </button>
-    <button mat-raised-button color="primary" *ngIf="getBasketProductCount() == 0">
       Корзина
     </button>
 

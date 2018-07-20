@@ -52,7 +52,7 @@
   <div class="row" *ngIf="getOrders().length > 0">
     <div class="cell" align="center">
         <mat-divider style="padding-top: 10px"></mat-divider>
-        <button mat-button mat-raised-button color="primary"  [mat-dialog-close]="true">Оформить заказ</button>
+        <button mat-button mat-raised-button color="primary"  [mat-dialog-close]="true" [routerLink]="['/order']">Оформить заказ</button>
     </div>
   </div>
 
