@@ -36,8 +36,13 @@
               <div class="cell" style="width: 100px">
                 <span class="formField">{{item.price / 100 | number:'3.2-5'}} ₽</span>
               </div>
-              <div class="cell" style="width: 50px">
-                <input matInput type="number" placeholder="Кол-во" value="1" min="1" class="formField">
+              <div class="cell formField">
+                <div class="row">
+                  <div class="cell">
+                    <input matInput type="number" placeholder="Кол-во" value="{{item.count}}" min="1" class="formField">
+                  </div>
+                  <div class="cell">шт.</div>
+                </div>
               </div>
               <div class="cell">
                 <button mat-button (click)="deleteProdict(item)">X</button>

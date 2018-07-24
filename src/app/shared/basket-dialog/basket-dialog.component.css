@@ -47,4 +47,6 @@ font.errortext {
   color: dimgray;
   border: none;
   width: 50px;
+  text-align: right;
+  padding: 0;
 }
