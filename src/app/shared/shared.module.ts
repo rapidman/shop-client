@@ -42,6 +42,7 @@ import {BreadcrumbComponent} from "./breadcrumb/breadcrumb.component";
 import {BreadcrumbResolverService} from "./service/breadcrumb/breadcrumb-resolver.service";
 import { ProductCardComponent } from './product-card/product-card.component';
 import { BasketDialogComponent } from './basket-dialog/basket-dialog.component';
+import { OrderWasSentInfoComponent } from './order-was-sent-info/order-was-sent-info.component';
 
 const routes: Routes = [
   {
@@ -108,11 +109,11 @@ const routes: Routes = [
     RouterModule.forChild(routes),
   ],
   exports: [ RouterModule, CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent,
-    BreadcrumbComponent, ProductCardComponent ],
+    BreadcrumbComponent, ProductCardComponent, OrderWasSentInfoComponent ],
   declarations: [CatalogComponent, InfiniteCarouselComponent, SearchAutocompleteComponent, SearchResultComponent,
-    BreadcrumbComponent, ProductCardComponent, BasketDialogComponent],
+    BreadcrumbComponent, ProductCardComponent, BasketDialogComponent, OrderWasSentInfoComponent],
   providers: [DetailService, CatalogService, BreadcrumbResolverService],
-  entryComponents: [BasketDialogComponent]
+  entryComponents: [BasketDialogComponent, OrderWasSentInfoComponent]
 })
 export class SharedModule {
 }

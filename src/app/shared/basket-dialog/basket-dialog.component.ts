@@ -32,7 +32,7 @@ export class BasketDialogComponent implements OnInit {
   ngOnInit() {
   }
 
-  deleteProdict(item: Order) {
+  deleteProduct(item: Order) {
     this.basketService.delete(item.productId);
   }
 
