@@ -3,6 +3,7 @@ import {FormControl, FormGroupDirective, NgForm, Validators} from "@angular/form
 import {ErrorStateMatcher, MatSnackBar} from "@angular/material";
 import {OrderWasSentInfoComponent} from "../shared/order-was-sent-info/order-was-sent-info.component";
 import {Router} from "@angular/router";
+import {BasketService, Order, UserOrder} from "../shared/service/basket/basket.service";
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -39,7 +40,8 @@ export class OrderComponent implements OnInit {
   lastName: string;
 
   constructor(public snackBar: MatSnackBar,
-              private router: Router) {
+              private router: Router,
+              private basketService: BasketService) {
   }
 
   ngOnInit() {
@@ -61,9 +63,17 @@ export class OrderComponent implements OnInit {
     }
     if (ok) {
       alert(this.email + this.phone);
+      let userOrder : UserOrder = {
+        orders: this.basketService.getOrders(),
+        email: this.email,
+        phone: this.phone,
+        name: this.phone,
+        lastName: this.lastName
+      };
+      this.basketService.sendOrder(userOrder);
+      this.openSnackBar();
+      this.router.navigate(['/main']);
     }
-    this.openSnackBar();
-    this.router.navigate(['/main']);
   }
 
   public checkLastName() {

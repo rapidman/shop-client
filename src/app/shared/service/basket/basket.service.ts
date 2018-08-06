@@ -15,6 +15,13 @@ export interface Order {
   price: number;
 }
 
+export interface UserOrder {
+  orders: Order[];
+  email: string;
+  phone: string;
+  name: string;
+  lastName: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -67,6 +74,15 @@ export class BasketService {
 
   delete(productId: number) {
     this.http.delete(this.BASKET_API + '/' + productId,
+      {withCredentials: true})
+      .subscribe(data => {
+        this.refreshBasket();
+      });
+  }
+
+  sendOrder(userOrder: UserOrder) {
+    this.http.post(this.BASKET_API + '/order',
+      userOrder,
       {withCredentials: true})
       .subscribe(data => {
         this.refreshBasket();
