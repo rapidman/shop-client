@@ -27,7 +27,7 @@ export interface UserOrder {
   providedIn: 'root'
 })
 export class BasketService {
-  public API = '//localhost:8080/api/v1';
+  public API = '//mighty-reef-79555.herokuapp.com/api/v1';
   public BASKET_API = this.API + '/basket';
 
   private basket: Basket;

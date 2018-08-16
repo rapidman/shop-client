@@ -13,7 +13,7 @@ export interface Product {
 @Injectable()
 export class DetailService {
 
-  public API = '//localhost:8080/api/v1';
+  public API = '//mighty-reef-79555.herokuapp.com/api/v1';
   public GOODS_API = this.API + '/goods';
   public CATEGORIES_API = this.API + '/categories';
   public SEARCH_AUTOCOMPLETE_API = this.API + '/search/autocomplete';

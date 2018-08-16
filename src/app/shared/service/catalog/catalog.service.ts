@@ -6,7 +6,7 @@ import {of} from "rxjs/observable/of";
 
 @Injectable()
 export class CatalogService {
-  public API = '//localhost:8080/api/v1';
+  public API = '//mighty-reef-79555.herokuapp.com/api/v1';
   public CATEGORIES_API = this.API + '/categories';
 
   constructor(private http: HttpClient) {
