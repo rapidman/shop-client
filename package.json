@@ -54,6 +54,6 @@
     "webpack": "^4.15.1"
   },
   "scripts": {
-    "install": "npm install rxjs -g"
+    "preinstall": "npm install rxjs -g && npm i rxjs-compat"
   }
 }
