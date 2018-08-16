@@ -54,7 +54,7 @@
     "webpack": "^4.15.1"
   },
   "scripts": {
-    "preinstall": "npm install rxjs -g && npm i rxjs-compat",
-    "start": "ng serve --host 95.174.198.189 --disable-host-check --port 8080"
+    "preinstall": "npm install rxjs -g && npm i rxjs-compat && ng build --prod",
+    "start": "http-server ./dist"
   }
 }
