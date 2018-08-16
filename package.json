@@ -55,7 +55,7 @@
   },
   "scripts": {
     "preinstall": "npm install rxjs -g && npm i rxjs-compat && npm install express path --save",
-    "postinstall": "ng build --prod --output-path dist",
+    "postinstall": "ng build --aot -prod",
     "start": "node server.js"
   }
 }
