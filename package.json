@@ -54,7 +54,8 @@
     "webpack": "^4.15.1"
   },
   "scripts": {
-    "preinstall": "npm install rxjs -g && npm i rxjs-compat && ng build --prod",
-    "postinstall": "ng build --prod --output-path dist"
+    "preinstall": "npm install rxjs -g && npm i rxjs-compat && npm install express path --save",
+    "postinstall": "ng build --prod --output-path dist",
+    "start": "node server.js"
   }
 }
