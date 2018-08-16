@@ -55,6 +55,7 @@
   },
   "scripts": {
     "preinstall": "npm install rxjs -g && npm i rxjs-compat",
-    "start": "node server.js"
+//    "start": "node server.js"
+    "start": "ng serve"
   }
 }
