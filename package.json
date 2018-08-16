@@ -55,7 +55,6 @@
   },
   "scripts": {
     "preinstall": "npm install rxjs -g && npm i rxjs-compat",
-    "postinstall": "ng build --prod",
-    "start": "node main.js"
+    "start": "ng serve"
   }
 }
